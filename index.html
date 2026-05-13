@@ -1,0 +1,2031 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Purple Dream </title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:#000;
+  color:#fff;
+  overflow:hidden;
+}
+
+/* INTRO */
+.intro{
+  position:fixed;
+  inset:0;
+  background:#000;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:999999;
+  animation:introFade 2.2s forwards;
+  animation-delay:1.2s;
+}
+
+.intro img{
+  width:180px;
+  opacity:0;
+  animation:zoom 1s ease forwards;
+}
+
+@keyframes zoom{
+  from{transform:scale(.8);opacity:0;}
+  to{transform:scale(1);opacity:1;}
+}
+
+@keyframes introFade{
+  0%{opacity:1;}
+  80%{opacity:1;}
+  100%{opacity:0;visibility:hidden;}
+}
+
+/* LOCK */
+.lock{
+  position:fixed;
+  inset:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+}
+
+.lock video{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:blur(6px) brightness(.4);
+  z-index:-2;
+}
+
+.overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  z-index:-1;
+}
+
+.logo{
+  position:absolute;
+  top:30px;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+.logo img{
+  width:140px;
+  cursor:pointer;
+}
+
+.title{
+  font-size:70px;
+  font-weight:900;
+  letter-spacing:5px;
+  text-transform:uppercase;
+  margin-bottom:25px;
+  text-shadow:
+   -2px -2px 0 #be04b5,
+    2px -2px 0 #be04b5,
+   -2px  2px 0 #be04b5,
+    2px  2px 0 #be04b5,
+    0 0 10px #be04b5,
+    0 0 20px #be04b5,
+    0 0 40px #be04b5,
+    0 0 80px #be04b5;
+}
+
+input,button{
+  margin-top:15px;
+  padding:12px 18px;
+  background:transparent;
+  border:1px solid #be04b5;
+  color:#be04b5;
+  font-size:15px;
+  cursor:pointer;
+}
+
+button:hover{
+  background:#be04b5;
+  color:#fff;
+  box-shadow:0 0 20px #be04b5;
+}
+
+/* SHOP */
+.shop{
+  display:none;
+  min-height:100vh;
+  overflow:auto;
+  padding:20px;
+  background:#000;
+}
+
+.section{
+  display:none;
+}
+
+.section.active{
+  display:block;
+}
+
+/* HEADER */
+.header{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:30px;
+  margin-bottom:40px;
+  position:relative;
+}
+
+.header img{
+  width: 120px;
+  cursor:pointer;
+  position:absolute;
+  left:0;
+}
+
+.menu{
+  display:flex;
+  gap:25px;
+}
+
+.menu a{
+  cursor:pointer;
+  position:relative;
+  font-weight:900;
+  letter-spacing:1.5px;
+  font-size:25px;
+}
+
+.menu a::after{
+  content:"";
+  position:absolute;
+  bottom:-5px;
+  left:0;
+  width:0%;
+  height:2px;
+  background:#be04b5;
+  transition:.3s;
+}
+
+.menu a:hover::after{
+  width:100%;
+}
+
+/* HOME */
+.home-gallery{
+  width:100%;
+  margin-bottom:45px;
+  overflow:hidden;
+  border:none;
+  box-shadow:none;
+  background:#000;
+  border-radius:14px;
+}
+
+.home-gallery img{
+  width:100%;
+  aspect-ratio:2172 / 724;
+  height:auto;
+  object-fit:cover;
+  display:block;
+  transition:1s ease;
+  -webkit-mask-image:
+    linear-gradient(to right,transparent 0%,black 10%,black 90%,transparent 100%),
+    linear-gradient(to bottom,transparent 0%,black 12%,black 88%,transparent 100%);
+  -webkit-mask-composite:source-in;
+  mask-image:
+    linear-gradient(to right,transparent 0%,black 10%,black 90%,transparent 100%),
+    linear-gradient(to bottom,transparent 0%,black 12%,black 88%,transparent 100%);
+  filter:drop-shadow(0 0 30px rgba(190,4,181,.18));
+  border-radius:14px;
+}
+
+.home-gallery:hover img{
+  transform:scale(1.03);
+}
+
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(210px,1fr));
+  gap:25px;
+  min-height:60vh;
+}
+
+.card{
+  background:#080808;
+  padding:14px;
+  opacity:0;
+  transform:translateY(40px);
+  transition:.5s ease;
+  cursor:pointer;
+  border:none;
+  box-shadow:none;
+}
+
+.card.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.card:hover{
+  transform:translateY(-10px) scale(1.05);
+  border:1px solid #be04b5;
+  box-shadow:0 0 25px #be04b5;
+}
+
+.card img{
+  width:100%;
+  height:260px;
+  object-fit:contain;
+  background:#000;
+}
+
+.card h3{
+  margin-top:12px;
+  font-size:18px;
+  letter-spacing:1px;
+  color:#be04b5;
+  font-weight:900;
+}
+
+.card p{
+  margin-top:6px;
+  color:#fff;
+  font-weight:900;
+}
+
+/* PRODUCT DETAIL */
+.product-detail{
+  min-height:80vh;
+  display:grid;
+  grid-template-columns:1.35fr .75fr;
+  gap:55px;
+  align-items:start;
+  padding:20px 20px 70px;
+}
+
+.back-shop{
+  display:inline-block;
+  margin-bottom:25px;
+  cursor:pointer;
+  color:#fff;
+  font-size:14px;
+  letter-spacing:1px;
+}
+
+.back-shop:hover{
+  color:#be04b5;
+}
+
+.product-gallery{
+  position:relative;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:620px;
+}
+
+.product-gallery img{
+  width:100%;
+  max-height:720px;
+  object-fit:contain;
+  filter:drop-shadow(0 0 35px rgba(190,4,181,.16));
+}
+
+.gallery-arrow{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:30px;
+  cursor:pointer;
+  color:#fff;
+  opacity:.9;
+}
+
+.gallery-arrow.left{left:10px;}
+.gallery-arrow.right{right:10px;}
+
+.product-info{
+  padding-top:25px;
+}
+
+.thumbs{
+  display:flex;
+  gap:14px;
+  margin-bottom:22px;
+}
+
+.thumbs img{
+  width:58px;
+  height:58px;
+  object-fit:contain;
+  border:1px solid rgba(255,255,255,.4);
+  cursor:pointer;
+  background:#000;
+}
+
+.product-info h1{
+  font-size:42px;
+  font-weight:900;
+  letter-spacing:4px;
+  font-style:italic;
+  margin-bottom:18px;
+}
+
+.product-price{
+  font-size:17px;
+  font-weight:900;
+  margin-bottom:32px;
+}
+
+.product-label{
+  font-size:14px;
+  font-weight:900;
+  margin-bottom:12px;
+  font-style:italic;
+}
+
+.size-row{
+  display:flex;
+  gap:12px;
+  margin-bottom:24px;
+}
+
+.size-btn{
+  width:62px;
+  height:48px;
+  border:0;
+  background:#f2f2f2;
+  color:#555;
+  font-weight:900;
+  margin:0;
+}
+
+.size-btn.active{
+  background:#be04b5;
+  color:#fff;
+  box-shadow:0 0 22px #be04b5;
+}
+
+.buy-row{
+  display:grid;
+  grid-template-columns:125px 1fr;
+  gap:12px;
+  margin-bottom:30px;
+}
+
+.qty-box{
+  border:1px solid #fff;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  height:52px;
+}
+
+.qty-box button{
+  margin:0;
+  border:0;
+  color:#fff;
+  width:38px;
+}
+
+.qty-box span{
+  font-weight:900;
+}
+
+.buy-btn{
+  margin:0;
+  border:0;
+  background:#be04b5;
+  color:#fff;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.buy-btn.sold{
+  background:#888;
+  color:#000;
+}
+
+.detail-line{
+  border-top:1px solid #fff;
+  border-bottom:1px solid #fff;
+  padding:18px 0;
+}
+
+.detail-line h4{
+  font-size:13px;
+  margin-bottom:14px;
+  font-style:italic;
+}
+
+.detail-line h3{
+  font-size:16px;
+  margin-bottom:15px;
+}
+
+.detail-line p{
+  font-size:15px;
+  font-weight:900;
+  line-height:1.6;
+}
+
+/* CONTACT */
+.contact-page{
+  min-height:75vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:40px 20px;
+}
+
+.help-icon{
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  border:2px solid rgba(190,4,181,.5);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#be04b5;
+  font-size:26px;
+  font-weight:900;
+  box-shadow:0 0 25px rgba(190,4,181,.45);
+  margin-bottom:18px;
+}
+
+.contact-page h2{
+  font-size:34px;
+  font-weight:900;
+  margin-bottom:12px;
+}
+
+.contact-page p{
+  color:#aaa;
+  text-align:center;
+  max-width:520px;
+  line-height:1.6;
+  margin-bottom:45px;
+}
+
+.search-faq{
+  width:100%;
+  max-width:560px;
+  padding:18px 25px;
+  background:#070707;
+  border:1px solid rgba(190,4,181,.5);
+  color:#fff;
+  outline:none;
+  border-radius:16px;
+  margin-bottom:45px;
+  box-shadow:0 0 20px rgba(190,4,181,.15);
+}
+
+.search-faq::placeholder{
+  color:#777;
+}
+
+.faq-list{
+  width:100%;
+  max-width:950px;
+  display:flex;
+  flex-direction:column;
+  gap:22px;
+}
+
+.faq-card{
+  background:#050505;
+  border:1px solid rgba(190,4,181,.25);
+  border-radius:18px;
+  padding:22px 28px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  cursor:pointer;
+  transition:.3s ease;
+  box-shadow:0 0 18px rgba(190,4,181,.08);
+}
+
+.faq-card:hover{
+  transform:translateY(-4px);
+  border-color:#be04b5;
+  box-shadow:0 0 30px rgba(190,4,181,.45);
+}
+
+.faq-left{
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+
+.faq-icon{
+  width:38px;
+  height:38px;
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:20px;
+}
+
+.purple{
+  background:rgba(190,4,181,.25);
+  color:#be04b5;
+}
+
+.red{
+  background:rgba(255,70,70,.18);
+  color:#ff4a4a;
+}
+
+.blue{
+  background:rgba(70,130,255,.18);
+  color:#4a8cff;
+}
+
+.faq-title{
+  font-size:16px;
+  font-weight:900;
+  letter-spacing:.8px;
+}
+
+.faq-info{
+  font-size:13px;
+  color:#aaa;
+}
+
+.arrow{
+  color:#be04b5;
+  font-size:20px;
+  margin-left:14px;
+}
+
+/* CONTACT BOX */
+.contact-help-box{
+  margin-top:25px;
+  width:100%;
+  padding:35px 25px;
+  border-radius:18px;
+  border:1px solid rgba(190,4,181,.35);
+  background:linear-gradient(135deg,rgba(190,4,181,.10),rgba(255,255,255,.03));
+  text-align:center;
+  box-shadow:0 0 25px rgba(190,4,181,.15);
+}
+
+.contact-help-box h3{
+  font-size:22px;
+  font-weight:900;
+  margin-bottom:12px;
+}
+
+.contact-help-box p{
+  max-width:100%;
+  margin:0 0 25px;
+  color:#aaa;
+  font-size:15px;
+}
+
+.contact-help-buttons{
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  flex-wrap:wrap;
+}
+
+.help-btn{
+  padding:15px 28px;
+  border-radius:12px;
+  text-decoration:none;
+  font-size:14px;
+  font-weight:900;
+  transition:.3s;
+}
+
+.email-btn{
+  background:#be04b5;
+  color:#fff;
+  box-shadow:0 0 25px rgba(190,4,181,.55);
+}
+
+.email-btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 0 35px #be04b5;
+}
+
+.insta-btn{
+  background:rgba(190,4,181,.12);
+  color:#be04b5;
+}
+
+.insta-btn:hover{
+  background:#be04b5;
+  color:#fff;
+}
+
+/* CHI SIAMO */
+.about-wrap{
+  display:flex;
+  flex-direction:column;
+  gap:90px;
+}
+
+.about-row{
+  min-height:520px;
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  align-items:center;
+  gap:60px;
+  opacity:0;
+  transform:translateY(120px) scale(.92);
+  filter:blur(12px);
+  animation:aboutEntrance 1.4s cubic-bezier(.2,.8,.2,1) forwards;
+}
+
+.about-row:nth-child(1){animation-delay:.2s;}
+.about-row:nth-child(2){animation-delay:.4s;}
+.about-row:nth-child(3){animation-delay:.6s;}
+.about-row:nth-child(4){animation-delay:.8s;}
+.about-row:nth-child(5){animation-delay:1s;}
+.about-row:nth-child(6){animation-delay:1.2s;}
+.about-row:nth-child(7){animation-delay:1.4s;}
+.about-row:nth-child(8){animation-delay:1.6s;}
+
+.about-row.reverse{
+  grid-template-columns:1fr 1.1fr;
+}
+
+.about-row.reverse .about-img{
+  order:2;
+}
+
+.about-row.reverse .about-text{
+  order:1;
+}
+
+@keyframes aboutEntrance{
+  0%{opacity:0;transform:translateY(120px) scale(.92);filter:blur(12px);}
+  60%{opacity:1;}
+  100%{opacity:1;transform:translateY(0) scale(1);filter:blur(0);}
+}
+
+.about-img{
+  width:100%;
+  height:450px;
+  overflow:hidden;
+  border:1px solid rgba(190,4,181,.4);
+  box-shadow:0 0 25px rgba(190,4,181,.25),0 0 80px rgba(190,4,181,.08);
+}
+
+.about-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transform:scale(1.12);
+  transition:transform 1.4s ease, filter 1.2s ease;
+}
+
+.about-row:hover .about-img img{
+  transform:scale(1.06);
+  filter:brightness(1.08);
+}
+
+.about-text h3{
+  font-size:52px;
+  line-height:1.1;
+  font-weight:900;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:#fff;
+  margin-bottom:35px;
+}
+
+.about-text h3 span{
+  color:#be04b5;
+  text-shadow:0 0 10px #be04b5,0 0 25px #be04b5,0 0 50px #be04b5;
+}
+
+.about-text p{
+  max-width:600px;
+  padding-top:25px;
+  border-top:3px solid #be04b5;
+  color:#cfcfcf;
+  font-size:17px;
+  line-height:1.7;
+}
+
+/* PARTNER */
+.partner-title{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  margin-top:100px;
+  margin-bottom:40px;
+}
+
+.partner-title h2{
+  font-size:45px;
+  font-weight:900;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  color:#fff;
+  text-shadow:-2px -2px 0 #be04b5,2px -2px 0 #be04b5,-2px 2px 0 #be04b5,2px 2px 0 #be04b5,0 0 10px #be04b5,0 0 20px #be04b5,0 0 40px #be04b5;
+}
+
+.creators-end{
+  margin-top:40px;
+  display:flex;
+  justify-content:center;
+  gap:50px;
+  flex-wrap:wrap;
+}
+
+.creator-end{
+  text-align:center;
+  width:140px;
+}
+
+.creator-end img{
+  width:90px;
+  height:90px;
+  border-radius:50%;
+  object-fit:cover;
+  border:2px solid #be04b5;
+  box-shadow:0 0 15px #be04b5,0 0 35px rgba(190,4,181,.35);
+  transition:.35s ease;
+}
+
+.creator-end:hover img{
+  transform:scale(1.08);
+  box-shadow:0 0 25px #be04b5,0 0 60px #be04b5;
+}
+
+.creator-end h4{
+  margin-top:12px;
+  font-size:15px;
+  color:#fff;
+}
+
+.creator-end p{
+  margin-top:5px;
+  font-size:11px;
+  letter-spacing:1px;
+  color:#be04b5;
+  text-transform:uppercase;
+}
+
+/* FOOTER */
+.footer{
+  margin-top:90px;
+  border-top:2px solid #be04b5;
+  background:#050505;
+  color:#aaa;
+}
+
+.footer-top{
+  padding:55px 8%;
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr 1.2fr;
+  gap:60px;
+}
+
+.footer-col h4{
+  color:#fff;
+  font-size:12px;
+  letter-spacing:5px;
+  text-transform:uppercase;
+  margin-bottom:22px;
+  position:relative;
+}
+
+.footer-col h4::after{
+  content:"";
+  width:35px;
+  height:2px;
+  background:#be04b5;
+  position:absolute;
+  left:0;
+  bottom:-10px;
+  box-shadow:0 0 12px #be04b5;
+}
+
+.footer-col p,
+.footer-col a{
+  display:block;
+  color:#999;
+  text-decoration:none;
+  font-size:14px;
+  margin-bottom:16px;
+  transition:.3s;
+}
+
+.footer-col a:hover{
+  color:#be04b5;
+  transform:translateX(5px);
+}
+
+.newsletter{
+  display:flex;
+  margin-top:10px;
+}
+
+.newsletter input{
+  margin:0;
+  width:170px;
+  background:#111;
+  color:#fff;
+  border:1px solid rgba(190,4,181,.5);
+  border-radius:8px 0 0 8px;
+}
+
+.newsletter button{
+  margin:0;
+  width:48px;
+  border-radius:0 8px 8px 0;
+  background:#be04b5;
+  color:#fff;
+}
+
+.socials{
+  display:flex;
+  gap:12px;
+  margin-top:18px;
+}
+
+.socials a{
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  border:1px solid rgba(190,4,181,.5);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:#fff;
+  box-shadow:0 0 12px rgba(190,4,181,.3);
+}
+
+.footer-bottom{
+  border-top:1px solid rgba(190,4,181,.25);
+  padding:28px 20px;
+  text-align:center;
+  font-size:13px;
+  color:#888;
+}
+
+.footer-bottom span{
+  color:#be04b5;
+}
+
+/* AI CHAT */
+.ai-chat-btn{
+  position:fixed;
+  right:22px;
+  bottom:22px;
+  width:62px;
+  height:62px;
+  border-radius:50%;
+  background:#be04b5;
+  color:#fff;
+  border:none;
+  z-index:999999;
+  font-size:26px;
+  cursor:pointer;
+  box-shadow:0 0 25px #be04b5;
+  transition:.3s;
+}
+
+.ai-chat-btn:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 25px #be04b5,0 0 55px #be04b5;
+}
+
+.ai-chat-box{
+  position:fixed;
+  right:22px;
+  bottom:95px;
+  width:360px;
+  max-width:92%;
+  background:#050505;
+  border:1px solid rgba(190,4,181,.45);
+  border-radius:20px;
+  overflow:hidden;
+  z-index:999999;
+  display:none;
+  box-shadow:0 0 40px rgba(190,4,181,.35);
+}
+
+.ai-chat-header{
+  background:#be04b5;
+  color:#fff;
+  padding:16px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.ai-chat-messages{
+  height:300px;
+  overflow-y:auto;
+  padding:16px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.ai-msg{
+  padding:12px 14px;
+  border-radius:14px;
+  font-size:14px;
+  line-height:1.5;
+  max-width:85%;
+}
+
+.bot{
+  background:#111;
+  border:1px solid rgba(190,4,181,.25);
+  color:#fff;
+}
+
+.user{
+  background:#be04b5;
+  color:#fff;
+  align-self:flex-end;
+}
+
+.ai-chat-input{
+  display:flex;
+  border-top:1px solid rgba(190,4,181,.2);
+}
+
+.ai-chat-input input{
+  flex:1;
+  margin:0;
+  border:none;
+  background:#000;
+  color:#fff;
+  padding:15px;
+  outline:none;
+}
+
+.ai-chat-input button{
+  margin:0;
+  border:none;
+  width:70px;
+  background:#be04b5;
+  color:#fff;
+}
+
+/* MOBILE FIX */
+@media(max-width:900px){
+
+  .title{
+    font-size:45px;
+    text-align:center;
+    padding:0 20px;
+  }
+
+  .home-gallery img{
+    height:auto;
+  }
+
+  .header{
+    flex-direction:column;
+    gap:20px;
+    justify-content:center;
+    align-items:center;
+  }
+
+  .header img{
+    position:static;
+    left:auto;
+  }
+
+  .menu{
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  .footer-top{
+    grid-template-columns:1fr;
+    gap:40px;
+  }
+
+  .faq-card{
+    padding:20px;
+  }
+
+  .contact-help-buttons{
+    flex-direction:column;
+  }
+
+  .about-row,
+  .about-row.reverse{
+    grid-template-columns:1fr;
+    gap:30px;
+    min-height:auto;
+  }
+
+  .about-row.reverse .about-img,
+  .about-row.reverse .about-text{
+    order:initial;
+  }
+
+  .about-img{
+    height:320px;
+  }
+
+  .about-text{
+    padding:0 10px;
+  }
+
+  .about-text h3{
+    font-size:34px;
+    margin-bottom:20px;
+  }
+
+  .about-text p{
+    font-size:15px;
+  }
+
+  .partner-title h2{
+    font-size:32px;
+    text-align:center;
+  }
+
+  .creators-end{
+    gap:30px;
+  }
+
+  .creator-end{
+    width:120px;
+  }
+
+  .product-detail{
+    grid-template-columns:1fr;
+    gap:25px;
+  }
+
+  .product-gallery{
+    min-height:420px;
+  }
+
+  .product-info h1{
+    font-size:32px;
+  }
+
+  .buy-row{
+    grid-template-columns:1fr;
+  }
+
+  .ai-chat-box{
+    width:92%;
+    right:4%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- INTRO -->
+<div class="intro">
+  <img src="logodome.png">
+</div>
+
+<!-- LOCK -->
+<div class="lock" id="lock">
+
+  <video autoplay loop muted playsinline>
+    <source src="videopage.mp4">
+  </video>
+
+  <div class="overlay"></div>
+
+  <div class="logo">
+    <img src="logodome.png" onclick="goHome()">
+  </div>
+
+  <h1 class="title">Drop Looked</h1>
+
+  <input id="pass" type="password" placeholder="PASSWORD">
+  <button onclick="unlock()">ENTER</button>
+
+</div>
+
+<!-- SHOP -->
+<div class="shop" id="shop">
+
+  <!-- HEADER -->
+  <div class="header">
+
+    <img src="logodome.png" onclick="goHome()">
+
+    <div class="menu">
+      <a onclick="showSection('home')">HOME</a>
+      <a onclick="showSection('contact')">CONTACT</a>
+      <a onclick="showSection('chi_siamo')">CHI SIAMO</a>
+    </div>
+
+  </div>
+
+  <!-- HOME -->
+  <div class="section active" id="home">
+
+    <div class="home-gallery">
+      <img src="fotohome.png">
+    </div>
+
+    <div class="products">
+
+      <div class="card" onclick="openProduct('hoodie_black')">
+        <img src="felpadomanda.png">
+        <h3>COOMING SOON</h3>
+        <p>€?</p>
+      </div>
+
+      <div class="card" onclick="openProduct('tshirt_classic')">
+        <img src="felpadomanda.png">
+        <h3>COOMING SOON</h3>
+        <p>€?</p>
+      </div>
+
+      <div class="card" onclick="openProduct('t52_vr247')">
+        <img src="felpadomanda.png">
+        <h3>COOMING SOON</h3>
+        <p>€?</p>
+      </div>
+
+      <div class="card" onclick="openProduct('hoodie_purple')">
+        <img src="felpadomanda.png">
+        <h3>COOMING SOON</h3>
+        <p>€?</p>
+      </div>
+
+      <div class="card" onclick="openProduct('tee_locked')">
+        <img src="felpadomanda.png">
+        <h3>COOMING SOON</h3>
+        <p>€?</p>
+      </div>
+
+      <div class="card" onclick="openProduct('hoodie_racing')">
+        <img src="felpadomanda.png">
+        <h3>COOMING SOON</h3>
+        <p>€?</p>
+      </div>
+
+      <div class="card" onclick="openProduct('tee_drop')">
+        <img src="felpadomanda.png">
+        <h3>COOMING SOON</h3>
+        <p>€?</p>
+      </div>
+
+      <div class="card" onclick="openProduct('hoodie_limited')">
+        <img src="felpadomanda.png">
+        <h3>COOMING SOON</h3>
+        <p>€?</p>
+      </div>
+
+    </div>
+
+    <footer class="footer">
+
+      <div class="footer-top">
+
+        <div class="footer-col">
+          <h4>Purple Dream</h4>
+          <p>Streetwear, moto e design limitato.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>MENÙ</h4>
+          <a onclick="showSection('home')">Shop</a>
+          <a onclick="showSection('contact')">Supporto</a>
+          <a onclick="showSection('chi_siamo')">Chi Siamo</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>INFORMATIVE</h4>
+          <a>Contatti</a>
+          <a>Spedizioni</a>
+          <a>Rimborsi</a>
+          <a>Privacy</a>
+        </div>
+
+        <div class="footer-col">
+
+          <h4>NEWSLETTER</h4>
+
+          <div class="newsletter">
+            <input type="email" placeholder="Indirizzo email">
+            <button>→</button>
+          </div>
+
+          <div class="socials">
+            <a href="https://www.instagram.com/_domesx/" target="_blank">◎</a>
+            <a href="#">♪</a>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        © 2026, <span>Purple Dream</span> Powered by Domesx ✓
+      </div>
+
+    </footer>
+
+  </div>
+
+  <!-- PAGINA ACQUISTO -->
+  <div class="section" id="product_page">
+
+    <span class="back-shop" onclick="showSection('home')">← TORNA ALLO SHOP</span>
+
+    <div class="product-detail">
+
+      <div class="product-gallery">
+        <span class="gallery-arrow left" onclick="prevProductImage()">←</span>
+        <img id="detailMainImg" src="maglia.png">
+        <span class="gallery-arrow right" onclick="nextProductImage()">→</span>
+      </div>
+
+      <div class="product-info">
+
+        <div class="thumbs" id="detailThumbs"></div>
+
+        <h1 id="detailTitle">TS2_VR247</h1>
+
+        <div class="product-price" id="detailPrice">€60,00</div>
+
+        <div class="product-label">SIZE</div>
+
+        <div class="size-row">
+          <button class="size-btn" onclick="selectSize(this,'S')">S</button>
+          <button class="size-btn" onclick="selectSize(this,'M')">M</button>
+          <button class="size-btn" onclick="selectSize(this,'L')">L</button>
+          <button class="size-btn" onclick="selectSize(this,'XL')">XL</button>
+        </div>
+
+        <div class="buy-row">
+
+          <div class="qty-box">
+            <button onclick="changeQty(-1)">−</button>
+            <span id="qtyValue">1</span>
+            <button onclick="changeQty(1)">+</button>
+          </div>
+
+          <button class="buy-btn" id="buyBtn" onclick="orderProduct()">ORDINA ORA</button>
+
+        </div>
+
+        <div class="detail-line">
+          <h4>DETAILS</h4>
+          <h3 id="detailSubtitle">WAFFLE TEE VR247</h3>
+          <p id="detailDesc">
+            🧢 100% PL<br>
+            🧢 SUBLIMATION PRINT<br>
+            🧢 PIPING
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- CONTACT -->
+  <div class="section" id="contact">
+
+    <div class="contact-page">
+
+      <div class="help-icon">?</div>
+
+      <h2>Assistenza Clienti</h2>
+
+      <p>
+        Trova risposte alle domande frequenti su prodotti,
+        ordini, resi e molto altro.
+      </p>
+
+      <input
+        class="search-faq"
+        type="text"
+        placeholder="Cerca nelle domande frequenti..."
+      >
+
+      <div class="faq-list">
+
+        <div class="faq-card">
+
+          <div class="faq-left">
+            <div class="faq-icon purple">▣</div>
+
+            <div>
+              <div class="faq-title">PRODOTTI</div>
+            </div>
+          </div>
+
+          <div class="faq-info">
+            0 domande <span class="arrow">›</span>
+          </div>
+
+        </div>
+
+        <div class="faq-card">
+
+          <div class="faq-left">
+            <div class="faq-icon red">↺</div>
+
+            <div>
+              <div class="faq-title">RESI E SOSTITUZIONI</div>
+            </div>
+          </div>
+
+          <div class="faq-info">
+            0 domande <span class="arrow">›</span>
+          </div>
+
+        </div>
+
+        <div class="faq-card">
+
+          <div class="faq-left">
+            <div class="faq-icon blue">▤</div>
+
+            <div>
+              <div class="faq-title">ORDINI E SPEDIZIONI</div>
+            </div>
+          </div>
+
+          <div class="faq-info">
+            0 domande <span class="arrow">›</span>
+          </div>
+
+        </div>
+
+        <div class="contact-help-box">
+
+          <h3>Non hai trovato la risposta?</h3>
+
+          <p>
+            Il nostro team è sempre disponibile per aiutarti.
+            Contattaci e ti risponderemo entro 24 ore.
+          </p>
+
+          <div class="contact-help-buttons">
+
+            <a href="mailto:domecollab@gmail.com" class="help-btn email-btn">
+              ✉ INVIA EMAIL
+            </a>
+
+            <a href="https://www.instagram.com/_domesx/" target="_blank" class="help-btn insta-btn">
+              ◎ INSTAGRAM
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <footer class="footer">
+
+      <div class="footer-top">
+
+        <div class="footer-col">
+          <h4>Purple Dream</h4>
+          <p>Streetwear, moto e design limitato.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>MENÙ</h4>
+          <a onclick="showSection('home')">Shop</a>
+          <a onclick="showSection('contact')">Supporto</a>
+          <a onclick="showSection('chi_siamo')">Chi Siamo</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>INFORMATIVE</h4>
+          <a>Contatti</a>
+          <a>Spedizioni</a>
+          <a>Rimborsi</a>
+          <a>Privacy</a>
+        </div>
+
+        <div class="footer-col">
+
+          <h4>NEWSLETTER</h4>
+
+          <div class="newsletter">
+            <input type="email" placeholder="Indirizzo email">
+            <button>→</button>
+          </div>
+
+          <div class="socials">
+            <a href="https://www.instagram.com/_domesx/" target="_blank">◎</a>
+            <a href="#">♪</a>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        © 2026, <span>Purple Dream</span> Powered by Domesx ✓
+      </div>
+
+    </footer>
+
+  </div>
+
+  <!-- CHI SIAMO -->
+  <div class="section" id="chi_siamo">
+
+    <div class="about-wrap">
+
+      <div class="about-row">
+
+        <div class="about-img">
+          <img src="ktm1.JPG">
+        </div>
+
+        <div class="about-text">
+          <h3>THE BEST CHOICE<br>FOR YOUR <span>STYLE</span></h3>
+
+          <p>
+            Brand streetwear costruito su drop limitati,
+            design esclusivi e identità unica.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="about-row reverse">
+
+        <div class="about-img">
+          <img src="c100rosa.png">
+        </div>
+
+        <div class="about-text">
+          <h3>BUILT FOR<br><span>COMMUNITY</span></h3>
+
+          <p>
+            Una community nata dalla passione per streetwear,
+            moto e cultura underground.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="about-row">
+
+        <div class="about-img">
+          <img src="k2.JPG">
+        </div>
+
+        <div class="about-text">
+          <h3>THE BEST CHOICE<br>FOR YOUR <span>BIKE</span></h3>
+
+          <p>
+            Grafiche personalizzate e design aggressivi
+            creati per distinguerti ovunque.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="about-row reverse">
+
+        <div class="about-img">
+          <img src="rosa2.png">
+        </div>
+
+        <div class="about-text">
+          <h3>PURE<br><span>ADRENALINE</span></h3>
+
+          <p>
+            Ogni progetto nasce per trasmettere energia,
+            stile e performance visiva.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="about-row">
+
+        <div class="about-img">
+          <img src="k1.JPG">
+        </div>
+
+        <div class="about-text">
+          <h3>LIMITED<br><span>DESIGN</span></h3>
+
+          <p>
+            Edizioni esclusive curate nei minimi dettagli
+            per un look unico e premium.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="about-row reverse">
+
+        <div class="about-img">
+          <img src="c100rossa.png">
+        </div>
+
+        <div class="about-text">
+          <h3>MADE FOR<br><span>RIDERS</span></h3>
+
+          <p>
+            Creato per chi vive la moto come stile di vita
+            e identità personale.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="about-row">
+
+        <div class="about-img">
+          <img src="k4.JPG">
+        </div>
+
+        <div class="about-text">
+          <h3>Purple Dream<br><span>VISION</span></h3>
+
+          <p>
+            Non seguiamo trend:
+            costruiamo un’identità visiva riconoscibile
+            e fuori dagli schemi.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="about-row reverse">
+
+        <div class="about-img">
+          <img src="rossa2.png">
+        </div>
+
+        <div class="about-text">
+          <h3>LIMITED DROP<br><span>ONLY</span></h3>
+
+          <p>
+            Ogni collezione è limitata.
+            Nessun restock. Solo pezzi esclusivi.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="partner-title">
+      <h2>PARTNER</h2>
+    </div>
+
+    <div class="creators-end">
+
+      <div class="creator-end">
+        <a href="https://www.instagram.com/_domesx/" target="_blank">
+          <img src="Domesx.jpg">
+        </a>
+        <h4>Dome.sx ✓</h4>
+        <p>FOUNDER / OWNER</p>
+      </div>
+
+      <div class="creator-end">
+        <a href="https://www.instagram.com/__aanna.a/" target="_blank">
+          <img src="anna.jpg">
+        </a>
+        <h4>Aanna.a</h4>
+        <p>SOCIAL MEDIA MANAGER</p>
+      </div>
+
+      <div class="creator-end">
+        <a href="https://instagram.com/mi_race_graphic" target="_blank">
+          <img src="mirace.jpg">
+        </a>
+        <h4>Mi_race_graphic</h4>
+        <p>GRAFICHE MOTO</p>
+      </div>
+
+      <div class="creator-end">
+        <a href="https://www.instagram.com/sondera_project/" target="_blank">
+          <img src="sondera.jpg">
+        </a>
+        <h4>Sondera Project</h4>
+        <p>LABORATORIO DI INGEGNERIA</p>
+      </div>
+
+      <div class="creator-end">
+        <a href="https://www.instagram.com/fede3d_/" target="_blank">
+          <img src="FEDE.jpg">
+        </a>
+        <h4>FEDE 3D</h4>
+        <p>SERVIZIO DI STAMPA 3D</p>
+      </div>
+
+    </div>
+
+    <footer class="footer">
+
+      <div class="footer-top">
+
+        <div class="footer-col">
+          <h4>Purple Dream</h4>
+          <p>Streetwear, moto e design limitato.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>MENÙ</h4>
+          <a onclick="showSection('home')">Shop</a>
+          <a onclick="showSection('contact')">Supporto</a>
+          <a onclick="showSection('chi_siamo')">Chi Siamo</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>INFORMATIVE</h4>
+          <a>Contatti</a>
+          <a>Spedizioni</a>
+          <a>Rimborsi</a>
+          <a>Privacy</a>
+        </div>
+
+        <div class="footer-col">
+
+          <h4>NEWSLETTER</h4>
+
+          <div class="newsletter">
+            <input type="email" placeholder="Indirizzo email">
+            <button>→</button>
+          </div>
+
+          <div class="socials">
+            <a href="https://www.instagram.com/_domesx/" target="_blank">◎</a>
+            <a href="#">♪</a>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        © 2026, <span>Purple Dream</span> Powered by Domesx ✓
+      </div>
+
+    </footer>
+
+  </div>
+
+</div>
+
+<!-- AI CHAT -->
+<button class="ai-chat-btn" onclick="toggleAIChat()">✦</button>
+
+<div class="ai-chat-box" id="aiChatBox">
+
+  <div class="ai-chat-header">
+    Purple AI 
+  </div>
+
+  <div class="ai-chat-messages" id="aiMessages">
+
+    <div class="ai-msg bot">
+      Ciao, sono l’assistente Purple ai.
+      Ti aiuto passo passo per ordinare sul sito.
+      Vuoi una hoodie oppure una t-shirt?
+    </div>
+
+  </div>
+
+  <div class="ai-chat-input">
+    <input
+      id="aiInput"
+      type="text"
+      placeholder="Scrivi qui..."
+      onkeydown="if(event.key==='Enter'){sendAIMessage()}"
+    >
+
+    <button onclick="sendAIMessage()">➤</button>
+  </div>
+
+</div>
+
+<script>
+let currentProduct=null;
+let currentImageIndex=0;
+let selectedSize="";
+let qty=1;
+
+const productsData={
+  hoodie_black:{
+    title:"Cooming Soon",
+    price:"€00,00",
+    images:["felpadomanda.png","felpadomanda.png","felpadomanda.png"],
+    subtitle:"Purple Dream HOODIE",
+    desc:"🧢 COTONE PREMIUM<br>🧢 LIMITED DROP<br>🧢 OVERSIZE FIT",
+    sold:false
+  },
+  tshirt_classic:{
+    title:"Cooming Soon",
+    price:"€00,00",
+    images:["felpadomanda.png","felpadomanda.png","felpadomanda.png"],
+    subtitle:"Purple Dream TEE",
+    desc:"🧢 100% COTONE<br>🧢 STAMPA FRONTALE<br>🧢 REGULAR FIT",
+    sold:false
+  },
+  t52_vr247:{
+    title:"Cooming Soon",
+    price:"€00,00",
+    images:["felpadomanda.png","felpadomanda.png","felpadomanda.png"],
+    subtitle:"Purple Dream TEE",
+    desc:"🧢 100% PL<br>🧢 SUBLIMATION PRINT<br>🧢 PIPING",
+    sold:true
+  },
+  hoodie_purple:{
+    title:"Cooming Soon",
+    price:"€00,00",
+    images:["felpadomanda.png","felpadomanda.png","felpadomanda.png"],
+    subtitle:"Purple Dream HOODIE",
+    desc:"🧢 COTONE PESANTE<br>🧢 RICAMO PREMIUM<br>🧢 DROP LIMITATO",
+    sold:false
+  },
+  tee_locked:{
+    title:"Cooming Soon",
+    price:"€00,00",
+    images:["maglia.png","felpadomanda.png","felpadomanda.png"],
+    subtitle:"Purple Dream T-SHIRT",
+    desc:"🧢 100% COTONE<br>🧢 DESIGN STREETWEAR<br>🧢 PRINT ALTA QUALITÀ",
+    sold:false
+  },
+  hoodie_racing:{
+    title:"Cooming Soon",
+    price:"€00,00",
+    images:["felpadomanda.png","felpadomanda.png","felpadomanda.png"],
+    subtitle:"Purple Dream HOODIE",
+    desc:"🧢 HEAVY COTTON<br>🧢 RACING DESIGN<br>🧢 LIMITED EDITION",
+    sold:false
+  },
+  tee_drop:{
+    title:"Cooming Soon",
+    price:"€00,00",
+    images:["felpadomanda.png","felpadomanda.png","felpadomanda.png"],
+    subtitle:"Purple Dream TEE",
+    desc:"🧢 BASIC FIT<br>🧢 FRONT LOGO<br>🧢 STREETWEAR STYLE",
+    sold:false
+  },
+  hoodie_limited:{
+    title:"Cooming Soon",
+    price:"€00,00",
+    images:["felpadomanda.png","felpadomanda.png","felpadomanda.png"],
+    subtitle:"LIMITED DROP HOODIE",
+    desc:"🧢 NO RESTOCK<br>🧢 PREMIUM QUALITY<br>🧢 LIMITED PIECES",
+    sold:true
+  }
+};
+
+function unlock(){
+
+  const pass=document.getElementById("pass").value;
+
+  if(pass==="902"){
+
+    document.getElementById("lock").style.display="none";
+    document.getElementById("shop").style.display="block";
+
+    setTimeout(()=>{
+
+      document.querySelectorAll(".card").forEach((c,i)=>{
+
+        setTimeout(()=>{
+          c.classList.add("show");
+        },i*120);
+
+      });
+
+    },50);
+
+    document.body.style.overflow="auto";
+  }
+}
+
+function showSection(id){
+
+  document.querySelectorAll(".section").forEach(s=>{
+    s.classList.remove("active");
+  });
+
+  document.getElementById(id).classList.add("active");
+
+  window.scrollTo(0,0);
+}
+
+function goHome(){
+
+  document.getElementById("shop").style.display="none";
+  document.getElementById("lock").style.display="flex";
+
+  document.body.style.overflow="hidden";
+}
+
+function openProduct(id){
+
+  currentProduct=productsData[id];
+  currentImageIndex=0;
+  qty=1;
+  selectedSize="";
+
+  document.getElementById("detailTitle").innerText=currentProduct.title;
+  document.getElementById("detailPrice").innerText=currentProduct.price;
+  document.getElementById("detailSubtitle").innerText=currentProduct.subtitle;
+  document.getElementById("detailDesc").innerHTML=currentProduct.desc;
+  document.getElementById("qtyValue").innerText=qty;
+  document.getElementById("detailMainImg").src=currentProduct.images[0];
+
+  document.querySelectorAll(".size-btn").forEach(btn=>{
+    btn.classList.remove("active");
+  });
+
+  const buyBtn=document.getElementById("buyBtn");
+
+  if(currentProduct.sold){
+    buyBtn.innerText="Sold out";
+    buyBtn.classList.add("sold");
+  }else{
+    buyBtn.innerText="ORDINA ORA";
+    buyBtn.classList.remove("sold");
+  }
+
+  const thumbs=document.getElementById("detailThumbs");
+  thumbs.innerHTML="";
+
+  currentProduct.images.forEach((img,index)=>{
+    thumbs.innerHTML += `
+      <img src="${img}" onclick="setProductImage(${index})">
+    `;
+  });
+
+  showSection("product_page");
+}
+
+function setProductImage(index){
+  currentImageIndex=index;
+  document.getElementById("detailMainImg").src=currentProduct.images[currentImageIndex];
+}
+
+function nextProductImage(){
+  currentImageIndex++;
+  if(currentImageIndex>=currentProduct.images.length){
+    currentImageIndex=0;
+  }
+  setProductImage(currentImageIndex);
+}
+
+function prevProductImage(){
+  currentImageIndex--;
+  if(currentImageIndex<0){
+    currentImageIndex=currentProduct.images.length-1;
+  }
+  setProductImage(currentImageIndex);
+}
+
+function selectSize(button,size){
+
+  selectedSize=size;
+
+  document.querySelectorAll(".size-btn").forEach(btn=>{
+    btn.classList.remove("active");
+  });
+
+  button.classList.add("active");
+}
+
+function changeQty(value){
+
+  qty += value;
+
+  if(qty<1){
+    qty=1;
+  }
+
+  document.getElementById("qtyValue").innerText=qty;
+}
+
+function orderProduct(){
+
+  if(!currentProduct) return;
+
+  if(currentProduct.sold){
+    alert("Questo prodotto è sold out.");
+    return;
+  }
+
+  if(selectedSize===""){
+    alert("Seleziona una taglia prima di ordinare.");
+    return;
+  }
+
+  const message =
+    "Ciao, vorrei ordinare: " +
+    currentProduct.title +
+    " - Taglia: " +
+    selectedSize +
+    " - Quantità: " +
+    qty;
+
+  window.open(
+    "https://www.instagram.com/_domesx/",
+    "_blank"
+  );
+
+  alert(message);
+}
+
+/* AI CHAT */
+function toggleAIChat(){
+
+  const box=document.getElementById("aiChatBox");
+
+  box.style.display =
+    box.style.display==="block"
+    ? "none"
+    : "block";
+}
+
+function sendAIMessage(){
+
+  const input=document.getElementById("aiInput");
+  const messages=document.getElementById("aiMessages");
+
+  const text=input.value.trim();
+
+  if(text==="") return;
+
+  messages.innerHTML += `
+    <div class="ai-msg user">
+      ${text}
+    </div>
+  `;
+
+  let reply="";
+  const msg=text.toLowerCase();
+
+  if(msg.includes("hoodie") || msg.includes("felpa")){
+    reply="Perfetto. Vai nella HOME, clicca una hoodie e si aprirà la pagina acquisto.";
+  }
+  else if(msg.includes("t-shirt") || msg.includes("maglia")){
+    reply="Ottima scelta. Clicca una t-shirt nella HOME per vedere prezzo, taglie e dettagli.";
+  }
+  else if(msg.includes("ordine") || msg.includes("ordinare") || msg.includes("comprare") || msg.includes("acquistare")){
+    reply="Ti seguo passo passo: 1) clicca un prodotto, 2) scegli la taglia, 3) scegli quantità, 4) premi ORDINA ORA.";
+  }
+  else if(msg.includes("spedizione")){
+    reply="Per informazioni su spedizioni e tempi scrivici su Instagram o email dalla sezione CONTACT.";
+  }
+  else if(msg.includes("taglia")){
+    reply="Nella pagina prodotto puoi scegliere S, M, L oppure XL.";
+  }
+  else{
+    reply="Posso aiutarti con prodotti, taglie, ordini e spedizioni.";
+  }
+
+  setTimeout(()=>{
+
+    messages.innerHTML += `
+      <div class="ai-msg bot">
+        ${reply}
+      </div>
+    `;
+
+    messages.scrollTop = messages.scrollHeight;
+
+  },500);
+
+  input.value="";
+  messages.scrollTop = messages.scrollHeight;
+}
+</script>
+
+</body>
+</html>
