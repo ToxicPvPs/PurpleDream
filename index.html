@@ -1096,6 +1096,360 @@ button:hover{
     right:4%;
   }
 }
+
+/* RESPONSIVE TELEFONO COMPLETO */
+@media(max-width:768px){
+
+  html,
+  body{
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden;
+  }
+
+  body{
+    background:#000;
+  }
+
+  .shop{
+    padding:14px;
+    width:100%;
+  }
+
+  .lock{
+    padding:0 18px;
+    text-align:center;
+  }
+
+  .logo{
+    top:22px;
+  }
+
+  .logo img{
+    width:105px;
+  }
+
+  .title{
+    font-size:38px;
+    letter-spacing:3px;
+    line-height:1.1;
+    margin-bottom:20px;
+    padding:0 10px;
+  }
+
+  input,
+  button{
+    max-width:90%;
+  }
+
+  .header{
+    flex-direction:column;
+    gap:18px;
+    margin-bottom:28px;
+    padding-top:5px;
+  }
+
+  .header img{
+    position:static;
+    width:95px;
+  }
+
+  .menu{
+    gap:18px;
+    flex-wrap:wrap;
+    justify-content:center;
+    width:100%;
+  }
+
+  .menu a{
+    font-size:17px;
+    letter-spacing:1px;
+  }
+
+  .home-gallery{
+    margin-bottom:30px;
+    border-radius:12px;
+  }
+
+  .home-gallery img{
+    aspect-ratio:auto;
+    height:190px;
+    object-fit:cover;
+    border-radius:12px;
+  }
+
+  .products{
+    grid-template-columns:repeat(2,1fr);
+    gap:14px;
+    min-height:auto;
+  }
+
+  .card{
+    padding:10px;
+  }
+
+  .card:hover{
+    transform:translateY(-5px) scale(1.02);
+  }
+
+  .card img{
+    height:170px;
+  }
+
+  .card h3{
+    font-size:13px;
+    letter-spacing:.6px;
+  }
+
+  .card p{
+    font-size:13px;
+  }
+
+  .product-detail{
+    grid-template-columns:1fr;
+    gap:20px;
+    padding:10px 0 50px;
+  }
+
+  .back-shop{
+    margin-bottom:15px;
+  }
+
+  .product-gallery{
+    min-height:320px;
+  }
+
+  .product-gallery img{
+    max-height:330px;
+  }
+
+  .gallery-arrow{
+    font-size:26px;
+  }
+
+  .gallery-arrow.left{left:0;}
+  .gallery-arrow.right{right:0;}
+
+  .product-info{
+    padding-top:10px;
+  }
+
+  .thumbs{
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+
+  .product-info h1{
+    font-size:30px;
+    letter-spacing:2px;
+  }
+
+  .size-row{
+    flex-wrap:wrap;
+  }
+
+  .size-btn{
+    flex:1;
+    min-width:65px;
+  }
+
+  .buy-row{
+    grid-template-columns:1fr;
+  }
+
+  .qty-box{
+    width:100%;
+  }
+
+  .buy-btn{
+    height:52px;
+    width:100%;
+  }
+
+  .contact-page{
+    padding:30px 5px;
+  }
+
+  .contact-page h2{
+    font-size:27px;
+    text-align:center;
+  }
+
+  .contact-page p{
+    font-size:14px;
+    margin-bottom:30px;
+  }
+
+  .search-faq{
+    padding:15px 18px;
+    margin-bottom:30px;
+  }
+
+  .faq-card{
+    padding:18px;
+    gap:12px;
+  }
+
+  .faq-title{
+    font-size:14px;
+  }
+
+  .faq-info{
+    font-size:12px;
+  }
+
+  .about-wrap{
+    gap:55px;
+  }
+
+  .about-row,
+  .about-row.reverse{
+    grid-template-columns:1fr;
+    gap:22px;
+    min-height:auto;
+  }
+
+  .about-row.reverse .about-img,
+  .about-row.reverse .about-text{
+    order:initial;
+  }
+
+  .about-img{
+    height:260px;
+  }
+
+  .about-text{
+    padding:0 4px;
+  }
+
+  .about-text h3{
+    font-size:30px;
+    letter-spacing:1.5px;
+    margin-bottom:18px;
+  }
+
+  .about-text p{
+    font-size:14px;
+    line-height:1.6;
+    padding-top:18px;
+  }
+
+  .partner-title{
+    margin-top:70px;
+    margin-bottom:30px;
+  }
+
+  .partner-title h2{
+    font-size:32px;
+    text-align:center;
+  }
+
+  .creators-end{
+    gap:25px;
+  }
+
+  .creator-end{
+    width:125px;
+  }
+
+  .creator-end img{
+    width:82px;
+    height:82px;
+  }
+
+  .creator-end h4{
+    font-size:13px;
+  }
+
+  .creator-end p{
+    font-size:10px;
+  }
+
+  .footer{
+    margin-top:60px;
+  }
+
+  .footer-top{
+    grid-template-columns:1fr;
+    gap:35px;
+    padding:40px 24px;
+  }
+
+  .newsletter{
+    width:100%;
+  }
+
+  .newsletter input{
+    width:100%;
+  }
+
+  .ai-chat-btn{
+    width:55px;
+    height:55px;
+    right:16px;
+    bottom:16px;
+  }
+
+  .ai-chat-box{
+    width:92%;
+    right:4%;
+    bottom:82px;
+  }
+
+  .ai-chat-messages{
+    height:260px;
+  }
+}
+
+@media(max-width:430px){
+
+  .products{
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+  }
+
+  .card img{
+    height:145px;
+  }
+
+  .title{
+    font-size:34px;
+  }
+
+  .menu a{
+    font-size:15px;
+  }
+
+  .home-gallery img{
+    height:165px;
+  }
+
+  .about-img{
+    height:230px;
+  }
+
+  .about-text h3{
+    font-size:26px;
+  }
+}
+
+@media(max-width:360px){
+  .products{
+    grid-template-columns:1fr;
+  }
+
+  .card img{
+    height:190px;
+  }
+
+  .menu{
+    gap:12px;
+  }
+
+  .menu a{
+    font-size:14px;
+  }
+}
 </style>
 </head>
 
