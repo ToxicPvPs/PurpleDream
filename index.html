@@ -121,6 +121,16 @@ button:hover{background:#be04b5;color:#fff;box-shadow:0 0 20px #be04b5;}
 /* AI CHAT */
 .ai-chat-btn{position:fixed;right:22px;bottom:22px;width:62px;height:62px;border-radius:50%;background:#be04b5;color:#fff;border:none;z-index:99999;font-size:26px;cursor:pointer;box-shadow:0 0 25px #be04b5;transition:.3s;}.ai-chat-btn:hover{transform:scale(1.08);box-shadow:0 0 25px #be04b5,0 0 55px #be04b5;}.ai-chat-box{position:fixed;right:22px;bottom:95px;width:360px;max-width:92%;background:#050505;border:1px solid rgba(190,4,181,.45);border-radius:20px;overflow:hidden;z-index:99999;display:none;box-shadow:0 0 40px rgba(190,4,181,.35);}.ai-chat-header{background:#be04b5;color:#fff;padding:16px;font-weight:900;letter-spacing:1px;}.ai-chat-messages{height:300px;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:12px;}.ai-msg{padding:12px 14px;border-radius:14px;font-size:14px;line-height:1.5;max-width:85%;}.bot{background:#111;border:1px solid rgba(190,4,181,.25);color:#fff;}.user{background:#be04b5;color:#fff;align-self:flex-end;}.ai-chat-input{display:flex;border-top:1px solid rgba(190,4,181,.2);}.ai-chat-input input{flex:1;margin:0;border:none;background:#000;color:#fff;padding:15px;outline:none;}.ai-chat-input button{margin:0;border:none;width:70px;background:#be04b5;color:#fff;}
 
+
+/* FIX GENERALI */
+.lock{z-index:9999;}
+.shop{position:relative;z-index:1;}
+input:focus,button:focus,a:focus{outline:2px solid rgba(190,4,181,.7);outline-offset:3px;}
+button:disabled{opacity:.55;cursor:not-allowed;box-shadow:none!important;}
+.menu a.active-link{color:#be04b5;text-shadow:0 0 12px #be04b5;}
+.thumbs img.active-thumb{border-color:#be04b5;box-shadow:0 0 15px rgba(190,4,181,.65);}
+.empty-cart{color:#aaa;line-height:1.5;}
+
 /* MOBILE */
 @media(max-width:900px){.title{font-size:45px;text-align:center;padding:0 20px;}.home-gallery img{height:auto;}.header{flex-direction:column;gap:20px;justify-content:center;align-items:center;}.header img{position:static;left:auto;}.menu{flex-wrap:wrap;justify-content:center;}.footer-top{grid-template-columns:1fr;gap:40px;}.faq-card{padding:20px;}.contact-help-buttons{flex-direction:column;}.about-row,.about-row.reverse{grid-template-columns:1fr;gap:30px;min-height:auto;}.about-row.reverse .about-img,.about-row.reverse .about-text{order:initial;}.about-img{height:320px;}.about-text{padding:0 10px;}.about-text h3{font-size:34px;margin-bottom:20px;}.about-text p{font-size:15px;}.partner-title h2{font-size:32px;text-align:center;}.creators-end{gap:30px;}.creator-end{width:120px;}.product-detail{grid-template-columns:1fr;gap:25px;}.product-gallery{min-height:420px;}.product-info h1{font-size:32px;}.buy-row{grid-template-columns:1fr;}.ai-chat-box{width:92%;right:4%;}}
 @media(max-width:768px){html,body{width:100%;max-width:100%;overflow-x:hidden;}body{background:#000;}.shop{padding:14px;width:100%;}.lock{padding:0 18px;text-align:center;}.logo{top:22px;}.logo img{width:105px;}.title{font-size:38px;letter-spacing:3px;line-height:1.1;margin-bottom:20px;padding:0 10px;}input,button{max-width:90%;}.header{flex-direction:column;gap:18px;margin-bottom:28px;padding-top:5px;}.header img{position:static;width:95px;}.menu{gap:18px;flex-wrap:wrap;justify-content:center;width:100%;}.menu a{font-size:17px;letter-spacing:1px;}.home-gallery{margin-bottom:30px;border-radius:12px;}.home-gallery img{aspect-ratio:auto;height:190px;object-fit:cover;border-radius:12px;}.products{grid-template-columns:repeat(2,1fr);gap:14px;min-height:auto;}.card{padding:10px;}.card:hover{transform:translateY(-5px) scale(1.02);}.card img{height:170px;}.card h3{font-size:13px;letter-spacing:.6px;}.card p{font-size:13px;}.product-detail{grid-template-columns:1fr;gap:20px;padding:10px 0 50px;}.back-shop{margin-bottom:15px;}.product-gallery{min-height:320px;}.product-gallery img{max-height:330px;}.gallery-arrow{font-size:26px;}.gallery-arrow.left{left:0;}.gallery-arrow.right{right:0;}.product-info{padding-top:10px;}.thumbs{justify-content:center;flex-wrap:wrap;}.product-info h1{font-size:30px;letter-spacing:2px;}.size-row{flex-wrap:wrap;}.size-btn{flex:1;min-width:65px;}.buy-row{grid-template-columns:1fr;}.qty-box{width:100%;}.buy-btn{height:52px;width:100%;}.contact-page{padding:30px 5px;}.contact-page h2{font-size:27px;text-align:center;}.contact-page p{font-size:14px;margin-bottom:30px;}.search-faq{padding:15px 18px;margin-bottom:30px;}.faq-card{padding:18px;gap:12px;}.faq-title{font-size:14px;}.faq-info{font-size:12px;}.about-wrap{gap:55px;}.about-row,.about-row.reverse{grid-template-columns:1fr;gap:22px;min-height:auto;}.about-row.reverse .about-img,.about-row.reverse .about-text{order:initial;}.about-img{height:260px;}.about-text{padding:0 4px;}.about-text h3{font-size:30px;letter-spacing:1.5px;margin-bottom:18px;}.about-text p{font-size:14px;line-height:1.6;padding-top:18px;}.partner-title{margin-top:70px;margin-bottom:30px;}.partner-title h2{font-size:32px;text-align:center;}.creators-end{gap:25px;}.creator-end{width:125px;}.creator-end img{width:82px;height:82px;}.creator-end h4{font-size:13px;}.creator-end p{font-size:10px;}.footer{margin-top:60px;}.footer-top{grid-template-columns:1fr;gap:35px;padding:40px 24px;}.newsletter{width:100%;}.newsletter input{width:100%;}.ai-chat-btn{width:55px;height:55px;right:16px;bottom:16px;}.ai-chat-box{width:92%;right:4%;bottom:82px;}.ai-chat-messages{height:260px;}.cart-panel{width:100%;right:-100%;}}
@@ -137,8 +147,8 @@ button:hover{background:#be04b5;color:#fff;box-shadow:0 0 20px #be04b5;}
   <video autoplay loop muted playsinline><source src="videohome.mp4"></video>
   <div class="overlay"></div>
   <div class="logo"><img src="logodome.png" onclick="goHome()"></div>
-  <h1 class="title">Drop Looked</h1>
-  <input id="pass" type="password" placeholder="PASSWORD">
+  <h1 class="title">Drop Locked</h1>
+  <input id="pass" type="password" placeholder="PASSWORD" onkeydown="if(event.key==='Enter'){unlock()}">
   <button onclick="unlock()">ENTER</button>
 </div>
 
@@ -157,14 +167,14 @@ button:hover{background:#be04b5;color:#fff;box-shadow:0 0 20px #be04b5;}
   <div class="section active" id="home">
     <div class="home-gallery"><img src="fotohome.png"></div>
     <div class="products">
-      <div class="card" onclick="openProduct('hoodie_black')"><img src="felpadomanda.png"><h3>COOMING SOON</h3><p>€?</p></div>
-      <div class="card" onclick="openProduct('tshirt_classic')"><img src="ChatGPT Image 3 giu 2026, 23_22_59 (2).png"><h3>COOMING SOON</h3><p>€?</p></div>
-      <div class="card" onclick="openProduct('t52_vr247')"><img src="felpadomanda.png"><h3>COOMING SOON</h3><p>€?</p></div>
-      <div class="card" onclick="openProduct('hoodie_purple')"><img src="felpadomanda.png"><h3>COOMING SOON</h3><p>€?</p></div>
-      <div class="card" onclick="openProduct('tee_locked')"><img src="felpadomanda.png"><h3>COOMING SOON</h3><p>€?</p></div>
-      <div class="card" onclick="openProduct('hoodie_racing')"><img src="felpadomanda.png"><h3>COOMING SOON</h3><p>€?</p></div>
-      <div class="card" onclick="openProduct('tee_drop')"><img src="felpadomanda.png"><h3>COOMING SOON</h3><p>€?</p></div>
-      <div class="card" onclick="openProduct('hoodie_limited')"><img src="felpadomanda.png"><h3>COOMING SOON</h3><p>€?</p></div>
+      <div class="card" onclick="openProduct('hoodie_black')"><img src="felpadomanda.png"><h3>COMING SOON</h3><p>€?</p></div>
+      <div class="card" onclick="openProduct('tshirt_classic')"><img src="ChatGPT Image 3 giu 2026, 23_22_59 (2).png"><h3>COMING SOON</h3><p>€?</p></div>
+      <div class="card" onclick="openProduct('t52_vr247')"><img src="felpadomanda.png"><h3>COMING SOON</h3><p>€?</p></div>
+      <div class="card" onclick="openProduct('hoodie_purple')"><img src="felpadomanda.png"><h3>COMING SOON</h3><p>€?</p></div>
+      <div class="card" onclick="openProduct('tee_locked')"><img src="felpadomanda.png"><h3>COMING SOON</h3><p>€?</p></div>
+      <div class="card" onclick="openProduct('hoodie_racing')"><img src="felpadomanda.png"><h3>COMING SOON</h3><p>€?</p></div>
+      <div class="card" onclick="openProduct('tee_drop')"><img src="felpadomanda.png"><h3>COMING SOON</h3><p>€?</p></div>
+      <div class="card" onclick="openProduct('hoodie_limited')"><img src="felpadomanda.png"><h3>COMING SOON</h3><p>€?</p></div>
     </div>
     <footer class="footer"><div class="footer-top"><div class="footer-col"><h4>Purple Dream</h4><p>Streetwear, moto e design limitato.</p></div><div class="footer-col"><h4>MENÙ</h4><a onclick="showSection('home')">Shop</a><a onclick="showSection('contact')">Supporto</a><a onclick="showSection('chi_siamo')">Chi Siamo</a></div><div class="footer-col"><h4>INFORMATIVE</h4><a>Contatti</a><a>Spedizioni</a><a>Rimborsi</a><a>Privacy</a></div><div class="footer-col"><h4>NEWSLETTER</h4><div class="newsletter"><input type="email" placeholder="Indirizzo email"><button>→</button></div><div class="socials"><a href="https://www.instagram.com/_domesx/" target="_blank">◎</a><a href="#">♪</a></div></div></div><div class="footer-bottom">© 2026, <span>Purple Dream</span> Powered by Domesx ✓</div></footer>
   </div>
@@ -202,7 +212,7 @@ button:hover{background:#be04b5;color:#fff;box-shadow:0 0 20px #be04b5;}
       <div class="about-row reverse"><div class="about-img"><img src="rossa2.png"></div><div class="about-text"><h3>LIMITED DROP<br><span>ONLY</span></h3><p>Ogni collezione è limitata. Nessun restock. Solo pezzi esclusivi.</p></div></div>
     </div>
     <div class="partner-title"><h2>PARTNER</h2></div>
-    <div class="creators-end"><div class="creator-end"><a href="https://www.instagram.com/_domesx/" target="_blank"><img src="Domesx.jpg"></a><h4>Dome.sx ✓</h4><p>FOUNDER / OWNER</p></div><div class="creator-end"><a href="https://www.instagram.com/__aanna.a/" target="_blank"><img src="anna.jpg"></a><h4>Aanna.a</h4><p>SOCIAL MEDIA MANAGER</p></div><div class="creator-end"><a href="https://instagram.com/mi_race_graphic" target="_blank"><img src="mirace.jpg"></a><h4>Mi_race_graphic</h4><p>GRAFICHE MOTO</p></div><div class="creator-end"><a href="https://www.instagram.com/sondera_project/" target="_blank"><img src="sondera.jpg"></a><h4>Sondera Project</h4><p>LABORATORIO DI INGEGNERIA</p></div><div class="creator-end"><a href="https://www.instagram.com/fede3d_/" target="_blank"><img src="FEDE.jpg"></a><h4>FEDE 3D</h4><p>SERVIZIO DI STAMPA 3D</p></div></div>
+    <div class="creators-end"><div class="creator-end"><a href="https://www.instagram.com/_domesx/" target="_blank"><img src="Domesx.jpg"></a><h4>Dome.sx ✓</h4><p>FOUNDER / OWNER</p></div><div class="creator-end"><a href="https://www.instagram.com/__aanna.a/" target="_blank"><img src="anna.jpg"></a><h4>Aanna.a</h4><p>SOCIAL MEDIA MANAGER</p></div><div class="creator-end"><a href="https://instagram.com/mi_race_graphic" target="_blank"><img src="mirace.jpg"></a><h4>Mi_race_graphic</h4><p>GRAFICHE MOTO</p></div><div class="creator-end"><a href="https://www.instagram.com/sondera_project/" target="_blank"><img src="sondera.jpg"></a><h4>Sondera Project</h4><p>LABORATORIO DI INGEGNERIA</p></div><div class="creator-end"><a href="https://www.instagram.com/fede3d_/" target="_blank"><img src="3dproj.jpg"></a><h4>3dproject</h4><p>Accessori per moto</p></div></div>
     <footer class="footer"><div class="footer-top"><div class="footer-col"><h4>Purple Dream</h4><p>Streetwear, moto e design limitato.</p></div><div class="footer-col"><h4>MENÙ</h4><a onclick="showSection('home')">Shop</a><a onclick="showSection('contact')">Supporto</a><a onclick="showSection('chi_siamo')">Chi Siamo</a></div><div class="footer-col"><h4>INFORMATIVE</h4><a>Contatti</a><a>Spedizioni</a><a>Rimborsi</a><a>Privacy</a></div><div class="footer-col"><h4>NEWSLETTER</h4><div class="newsletter"><input type="email" placeholder="Indirizzo email"><button>→</button></div><div class="socials"><a href="https://www.instagram.com/_domesx/" target="_blank">◎</a><a href="#">♪</a></div></div></div><div class="footer-bottom">© 2026, <span>Purple Dream</span> Powered by Domesx ✓</div></footer>
   </div>
 </div>
@@ -215,7 +225,7 @@ button:hover{background:#be04b5;color:#fff;box-shadow:0 0 20px #be04b5;}
   <div class="checkout-box">
     <h3>ACQUISTA</h3>
     <input id="customerName" placeholder="Nome e cognome">
-    <input id="customerEmail" placeholder="Email">
+    <input id="customerEmail" type="email" placeholder="Email">
     <input id="customerAddress" placeholder="Indirizzo spedizione">
     <button onclick="checkoutOrder()">CONFERMA ORDINE</button>
     <p class="checkout-note">Il bottone prepara una email automatica con tutti i dati dell’ordine.</p>
@@ -224,78 +234,187 @@ button:hover{background:#be04b5;color:#fff;box-shadow:0 0 20px #be04b5;}
 
 <!-- AI CHAT -->
 <button class="ai-chat-btn" onclick="toggleAIChat()">✦</button>
-<div class="ai-chat-box" id="aiChatBox"><div class="ai-chat-header">Purple AI</div><div class="ai-chat-messages" id="aiMessages"><div class="ai-msg bot">Ciao, sono l’assistente Purple ai. Ti aiuto passo passo per ordinare sul sito. Vuoi una hoodie oppure una t-shirt?</div></div><div class="ai-chat-input"><input id="aiInput" type="text" placeholder="Scrivi qui..." onkeydown="if(event.key==='Enter'){sendAIMessage()}"><button onclick="sendAIMessage()">➤</button></div></div>
+<div class="ai-chat-box" id="aiChatBox"><div class="ai-chat-header">Purple AI</div><div class="ai-chat-messages" id="aiMessages"><div class="ai-msg bot">Ciao, sono l’assistente Purple AI. Ti aiuto passo passo per ordinare sul sito. Vuoi una hoodie oppure una t-shirt?</div></div><div class="ai-chat-input"><input id="aiInput" type="text" placeholder="Scrivi qui..." onkeydown="if(event.key==='Enter'){sendAIMessage()}"><button onclick="sendAIMessage()">➤</button></div></div>
 
 <script>
-let currentProduct=null;
-let currentImageIndex=0;
-let selectedSize="";
-let qty=1;
-let cart=[];
+let currentProduct = null;
+let currentImageIndex = 0;
+let selectedSize = "";
+let qty = 1;
+let cart = [];
 
-const productsData={
-  hoodie_black:{title:"Cooming Soon",price:"€00,00",images:["felpadomanda.png","felpadomanda.png","felpadomanda.png"],subtitle:"Purple Dream HOODIE",desc:"🧢 COTONE PREMIUM<br>🧢 LIMITED DROP<br>🧢 OVERSIZE FIT",sold:false},
-  tshirt_classic:{title:"Cooming Soon",price:"€00,00",images:["ChatGPT Image 3 giu 2026, 23_22_59 (2).png","ChatGPT Image 3 giu 2026, 23_22_59 (2).png","felpadomanda.png"],subtitle:"Purple Dream TEE",desc:"🧢 100% COTONE<br>🧢 STAMPA FRONTALE<br>🧢 REGULAR FIT",sold:false},
-  t52_vr247:{title:"Cooming Soon",price:"€00,00",images:["felpadomanda.png","felpadomanda.png","felpadomanda.png"],subtitle:"Purple Dream TEE",desc:"🧢 100% PL<br>🧢 SUBLIMATION PRINT<br>🧢 PIPING",sold:true},
-  hoodie_purple:{title:"Cooming Soon",price:"€00,00",images:["felpadomanda.png","felpadomanda.png","felpadomanda.png"],subtitle:"Purple Dream HOODIE",desc:"🧢 COTONE PESANTE<br>🧢 RICAMO PREMIUM<br>🧢 DROP LIMITATO",sold:false},
-  tee_locked:{title:"Cooming Soon",price:"€00,00",images:["maglia.png","felpadomanda.png","felpadomanda.png"],subtitle:"Purple Dream T-SHIRT",desc:"🧢 100% COTONE<br>🧢 DESIGN STREETWEAR<br>🧢 PRINT ALTA QUALITÀ",sold:false},
-  hoodie_racing:{title:"Cooming Soon",price:"€00,00",images:["felpadomanda.png","felpadomanda.png","felpadomanda.png"],subtitle:"Purple Dream HOODIE",desc:"🧢 HEAVY COTTON<br>🧢 RACING DESIGN<br>🧢 LIMITED EDITION",sold:false},
-  tee_drop:{title:"Cooming Soon",price:"€00,00",images:["felpadomanda.png","felpadomanda.png","felpadomanda.png"],subtitle:"Purple Dream TEE",desc:"🧢 BASIC FIT<br>🧢 FRONT LOGO<br>🧢 STREETWEAR STYLE",sold:false},
-  hoodie_limited:{title:"Cooming Soon",price:"€00,00",images:["felpadomanda.png","felpadomanda.png","felpadomanda.png"],subtitle:"LIMITED DROP HOODIE",desc:"🧢 NO RESTOCK<br>🧢 PREMIUM QUALITY<br>🧢 LIMITED PIECES",sold:true}
+const productsData = {
+  hoodie_black:{title:"Coming Soon",price:"€00,00",images:["felpadomanda.png","felpadomanda.png","felpadomanda.png"],subtitle:"Purple Dream HOODIE",desc:"🧢 COTONE PREMIUM<br>🧢 LIMITED DROP<br>🧢 OVERSIZE FIT",sold:false},
+  tshirt_classic:{title:"Coming Soon",price:"€00,00",images:["ChatGPT Image 3 giu 2026, 23_22_59 (2).png","ChatGPT Image 3 giu 2026, 23_47_44 (1).png"],subtitle:"Purple Dream TEE",desc:"🧢 100% COTONE<br>🧢 STAMPA FRONTALE<br>🧢 REGULAR FIT",sold:false},
+  t52_vr247:{title:"Coming Soon",price:"€00,00",images:["felpadomanda.png","felpadomanda.png","felpadomanda.png"],subtitle:"Purple Dream TEE",desc:"🧢 100% PL<br>🧢 SUBLIMATION PRINT<br>🧢 PIPING",sold:true},
+  hoodie_purple:{title:"Coming Soon",price:"€00,00",images:["felpadomanda.png","felpadomanda.png","felpadomanda.png"],subtitle:"Purple Dream HOODIE",desc:"🧢 COTONE PESANTE<br>🧢 RICAMO PREMIUM<br>🧢 DROP LIMITATO",sold:false},
+  tee_locked:{title:"Coming Soon",price:"€00,00",images:["maglia.png","felpadomanda.png","felpadomanda.png"],subtitle:"Purple Dream T-SHIRT",desc:"🧢 100% COTONE<br>🧢 DESIGN STREETWEAR<br>🧢 PRINT ALTA QUALITÀ",sold:false},
+  hoodie_racing:{title:"Coming Soon",price:"€00,00",images:["felpadomanda.png","felpadomanda.png","felpadomanda.png"],subtitle:"Purple Dream HOODIE",desc:"🧢 HEAVY COTTON<br>🧢 RACING DESIGN<br>🧢 LIMITED EDITION",sold:false},
+  tee_drop:{title:"Coming Soon",price:"€00,00",images:["felpadomanda.png","felpadomanda.png","felpadomanda.png"],subtitle:"Purple Dream TEE",desc:"🧢 BASIC FIT<br>🧢 FRONT LOGO<br>🧢 STREETWEAR STYLE",sold:false},
+  hoodie_limited:{title:"Coming Soon",price:"€00,00",images:["felpadomanda.png","felpadomanda.png","felpadomanda.png"],subtitle:"LIMITED DROP HOODIE",desc:"🧢 NO RESTOCK<br>🧢 PREMIUM QUALITY<br>🧢 LIMITED PIECES",sold:true}
 };
 
-function unlock(){const pass=document.getElementById("pass").value;if(pass==="902"){document.getElementById("lock").style.display="none";document.getElementById("shop").style.display="block";setTimeout(()=>{document.querySelectorAll(".card").forEach((c,i)=>{setTimeout(()=>{c.classList.add("show");},i*120);});},50);document.body.style.overflow="auto";}}
-function showSection(id){document.querySelectorAll(".section").forEach(s=>{s.classList.remove("active");});document.getElementById(id).classList.add("active");window.scrollTo(0,0);}
-function goHome(){document.getElementById("shop").style.display="none";document.getElementById("lock").style.display="flex";document.body.style.overflow="hidden";}
-function openProduct(id){currentProduct=productsData[id];currentImageIndex=0;qty=1;selectedSize="";document.getElementById("detailTitle").innerText=currentProduct.title;document.getElementById("detailPrice").innerText=currentProduct.price;document.getElementById("detailSubtitle").innerText=currentProduct.subtitle;document.getElementById("detailDesc").innerHTML=currentProduct.desc;document.getElementById("qtyValue").innerText=qty;document.getElementById("detailMainImg").src=currentProduct.images[0];document.querySelectorAll(".size-btn").forEach(btn=>{btn.classList.remove("active");});const buyBtn=document.getElementById("buyBtn");if(currentProduct.sold){buyBtn.innerText="Sold out";buyBtn.classList.add("sold");}else{buyBtn.innerText="AGGIUNGI AL CARRELLO";buyBtn.classList.remove("sold");}const thumbs=document.getElementById("detailThumbs");thumbs.innerHTML="";currentProduct.images.forEach((img,index)=>{thumbs.innerHTML+=`<img src="${img}" onclick="setProductImage(${index})">`;});showSection("product_page");}
-function setProductImage(index){currentImageIndex=index;document.getElementById("detailMainImg").src=currentProduct.images[currentImageIndex];}
-function nextProductImage(){currentImageIndex++;if(currentImageIndex>=currentProduct.images.length){currentImageIndex=0;}setProductImage(currentImageIndex);}
-function prevProductImage(){currentImageIndex--;if(currentImageIndex<0){currentImageIndex=currentProduct.images.length-1;}setProductImage(currentImageIndex);}
-function selectSize(button,size){selectedSize=size;document.querySelectorAll(".size-btn").forEach(btn=>{btn.classList.remove("active");});button.classList.add("active");}
-function changeQty(value){qty+=value;if(qty<1){qty=1;}document.getElementById("qtyValue").innerText=qty;}
+function showCards(){
+  document.querySelectorAll(".card").forEach((card,index)=>{
+    setTimeout(()=>card.classList.add("show"), index * 90);
+  });
+}
+
+function unlock(){
+  const pass = document.getElementById("pass").value.trim();
+  if(pass !== "902"){
+    alert("Password sbagliata.");
+    return;
+  }
+  document.getElementById("lock").style.display = "none";
+  document.getElementById("shop").style.display = "block";
+  document.body.style.overflow = "auto";
+  showSection("home");
+  setTimeout(showCards, 50);
+}
+
+function showSection(id){
+  document.querySelectorAll(".section").forEach(section=>section.classList.remove("active"));
+  const section = document.getElementById(id);
+  if(section) section.classList.add("active");
+
+  document.querySelectorAll(".menu a").forEach(link=>link.classList.remove("active-link"));
+  const menuMap = {home:0, contact:1, chi_siamo:2};
+  if(menuMap[id] !== undefined){
+    const link = document.querySelectorAll(".menu a")[menuMap[id]];
+    if(link) link.classList.add("active-link");
+  }
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+
+function goHome(){
+  document.getElementById("shop").style.display = "none";
+  document.getElementById("lock").style.display = "flex";
+  document.getElementById("pass").value = "";
+  document.body.style.overflow = "hidden";
+}
+
+function openProduct(id){
+  currentProduct = productsData[id];
+  if(!currentProduct) return;
+  currentImageIndex = 0;
+  qty = 1;
+  selectedSize = "";
+  document.getElementById("detailTitle").innerText = currentProduct.title;
+  document.getElementById("detailPrice").innerText = currentProduct.price;
+  document.getElementById("detailSubtitle").innerText = currentProduct.subtitle;
+  document.getElementById("detailDesc").innerHTML = currentProduct.desc;
+  document.getElementById("qtyValue").innerText = qty;
+  document.getElementById("detailMainImg").src = currentProduct.images[0];
+  document.querySelectorAll(".size-btn").forEach(btn=>btn.classList.remove("active"));
+
+  const buyBtn = document.getElementById("buyBtn");
+  buyBtn.disabled = currentProduct.sold;
+  buyBtn.innerText = currentProduct.sold ? "SOLD OUT" : "AGGIUNGI AL CARRELLO";
+  buyBtn.classList.toggle("sold", currentProduct.sold);
+
+  const thumbs = document.getElementById("detailThumbs");
+  thumbs.innerHTML = "";
+  currentProduct.images.forEach((img,index)=>{
+    const thumb = document.createElement("img");
+    thumb.src = img;
+    thumb.alt = currentProduct.title;
+    thumb.onclick = ()=>setProductImage(index);
+    if(index === 0) thumb.classList.add("active-thumb");
+    thumbs.appendChild(thumb);
+  });
+  showSection("product_page");
+}
+
+function setProductImage(index){
+  if(!currentProduct) return;
+  currentImageIndex = index;
+  document.getElementById("detailMainImg").src = currentProduct.images[currentImageIndex];
+  document.querySelectorAll("#detailThumbs img").forEach((img,i)=>img.classList.toggle("active-thumb", i === currentImageIndex));
+}
+function nextProductImage(){if(!currentProduct)return;setProductImage((currentImageIndex + 1) % currentProduct.images.length);}
+function prevProductImage(){if(!currentProduct)return;setProductImage((currentImageIndex - 1 + currentProduct.images.length) % currentProduct.images.length);}
+function selectSize(button,size){selectedSize=size;document.querySelectorAll(".size-btn").forEach(btn=>btn.classList.remove("active"));button.classList.add("active");}
+function changeQty(value){qty=Math.max(1, qty + value);document.getElementById("qtyValue").innerText=qty;}
 
 function orderProduct(){
-  if(!currentProduct)return;
+  if(!currentProduct) return;
   if(currentProduct.sold){alert("Questo prodotto è sold out.");return;}
-  if(selectedSize===""){alert("Seleziona una taglia prima di aggiungere al carrello.");return;}
+  if(selectedSize === ""){alert("Seleziona una taglia prima di aggiungere al carrello.");return;}
   cart.push({title:currentProduct.title,price:currentProduct.price,size:selectedSize,qty:qty});
   updateCart();
   document.getElementById("cartPanel").classList.add("active");
-  alert("Prodotto aggiunto al carrello.");
 }
 
 function toggleCart(){document.getElementById("cartPanel").classList.toggle("active");}
-function priceToNumber(price){return Number(price.replace("€","").replace(",",".").replace("?","0"))||0;}
-function formatPrice(num){return "€"+num.toFixed(2).replace(".",",");}
+function priceToNumber(price){return Number(String(price).replace("€","").replace(",",".").replace("?","0")) || 0;}
+function formatPrice(num){return "€" + num.toFixed(2).replace(".",",");}
 function updateCart(){
-  const cartItems=document.getElementById("cartItems");
-  const cartCount=document.getElementById("cartCount");
-  const cartTotal=document.getElementById("cartTotal");
-  cartCount.innerText=cart.length;
-  if(cart.length===0){cartItems.innerHTML="<p>Il carrello è vuoto.</p>";cartTotal.innerText="Totale: €0,00";return;}
-  cartItems.innerHTML="";
-  let total=0;
+  const cartItems = document.getElementById("cartItems");
+  const cartCount = document.getElementById("cartCount");
+  const cartTotal = document.getElementById("cartTotal");
+  cartCount.innerText = cart.reduce((sum,item)=>sum + item.qty, 0);
+  if(cart.length === 0){
+    cartItems.innerHTML = '<p class="empty-cart">Il carrello è vuoto.</p>';
+    cartTotal.innerText = "Totale: €0,00";
+    return;
+  }
+  cartItems.innerHTML = "";
+  let total = 0;
   cart.forEach((item,index)=>{
-    total+=priceToNumber(item.price)*item.qty;
-    cartItems.innerHTML+=`<div class="cart-item"><h4>${item.title}</h4><p>Prezzo: ${item.price}</p><p>Taglia: ${item.size}</p><p>Quantità: ${item.qty}</p><button class="remove-cart" onclick="removeFromCart(${index})">RIMUOVI</button></div>`;
+    total += priceToNumber(item.price) * item.qty;
+    cartItems.innerHTML += `<div class="cart-item"><h4>${item.title}</h4><p>Prezzo: ${item.price}</p><p>Taglia: ${item.size}</p><p>Quantità: ${item.qty}</p><button class="remove-cart" onclick="removeFromCart(${index})">RIMUOVI</button></div>`;
   });
-  cartTotal.innerText="Totale: "+formatPrice(total);
+  cartTotal.innerText = "Totale: " + formatPrice(total);
 }
 function removeFromCart(index){cart.splice(index,1);updateCart();}
+
 function checkoutOrder(){
-  if(cart.length===0){alert("Il carrello è vuoto.");return;}
-  const name=document.getElementById("customerName").value.trim();
-  const email=document.getElementById("customerEmail").value.trim();
-  const address=document.getElementById("customerAddress").value.trim();
-  if(name===""||email===""||address===""){alert("Compila tutti i campi per acquistare.");return;}
-  let orderText="NUOVO ORDINE PURPLE DREAM%0A%0A";
-  cart.forEach(item=>{orderText+="Prodotto: "+item.title+"%0ATaglia: "+item.size+"%0AQuantità: "+item.qty+"%0APrezzo: "+item.price+"%0A%0A";});
-  orderText+="Cliente: "+name+"%0AEmail: "+email+"%0AIndirizzo: "+address;
-  window.location.href="mailto:domecollab@gmail.com?subject=Nuovo ordine Purple Dream&body="+orderText;
+  if(cart.length === 0){alert("Il carrello è vuoto.");return;}
+  const name = document.getElementById("customerName").value.trim();
+  const email = document.getElementById("customerEmail").value.trim();
+  const address = document.getElementById("customerAddress").value.trim();
+  if(name === "" || email === "" || address === ""){alert("Compila tutti i campi per acquistare.");return;}
+  if(!email.includes("@")){alert("Inserisci una email valida.");return;}
+
+  let body = "NUOVO ORDINE PURPLE DREAM\n\n";
+  cart.forEach(item=>{
+    body += `Prodotto: ${item.title}\nTaglia: ${item.size}\nQuantità: ${item.qty}\nPrezzo: ${item.price}\n\n`;
+  });
+  body += `Cliente: ${name}\nEmail: ${email}\nIndirizzo: ${address}`;
+  const subject = encodeURIComponent("Nuovo ordine Purple Dream");
+  window.location.href = `mailto:domecollab@gmail.com?subject=${subject}&body=${encodeURIComponent(body)}`;
 }
 
-function toggleAIChat(){const box=document.getElementById("aiChatBox");box.style.display=box.style.display==="block"?"none":"block";}
-function sendAIMessage(){const input=document.getElementById("aiInput");const messages=document.getElementById("aiMessages");const text=input.value.trim();if(text==="")return;messages.innerHTML+=`<div class="ai-msg user">${text}</div>`;let reply="";const msg=text.toLowerCase();if(msg.includes("hoodie")||msg.includes("felpa")){reply="Perfetto. Vai nella HOME, clicca una hoodie e si aprirà la pagina acquisto.";}else if(msg.includes("t-shirt")||msg.includes("maglia")){reply="Ottima scelta. Clicca una t-shirt nella HOME per vedere prezzo, taglie e dettagli.";}else if(msg.includes("ordine")||msg.includes("ordinare")||msg.includes("comprare")||msg.includes("acquistare")){reply="Ti seguo passo passo: 1) clicca un prodotto, 2) scegli la taglia, 3) scegli quantità, 4) premi AGGIUNGI AL CARRELLO, 5) conferma ordine.";}else if(msg.includes("carrello")){reply="Il carrello è in alto nel menu. Da lì puoi controllare i prodotti e confermare l’ordine.";}else if(msg.includes("spedizione")){reply="Per informazioni su spedizioni e tempi scrivici su Instagram o email dalla sezione CONTACT.";}else if(msg.includes("taglia")){reply="Nella pagina prodotto puoi scegliere S, M, L oppure XL.";}else{reply="Posso aiutarti con prodotti, taglie, carrello, ordini e spedizioni.";}setTimeout(()=>{messages.innerHTML+=`<div class="ai-msg bot">${reply}</div>`;messages.scrollTop=messages.scrollHeight;},500);input.value="";messages.scrollTop=messages.scrollHeight;}
+function toggleAIChat(){
+  const box = document.getElementById("aiChatBox");
+  box.style.display = box.style.display === "block" ? "none" : "block";
+}
+function escapeHtml(text){
+  return text.replace(/[&<>'"]/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#039;",'"':"&quot;"}[char]));
+}
+function sendAIMessage(){
+  const input = document.getElementById("aiInput");
+  const messages = document.getElementById("aiMessages");
+  const text = input.value.trim();
+  if(text === "") return;
+  messages.innerHTML += `<div class="ai-msg user">${escapeHtml(text)}</div>`;
+  const msg = text.toLowerCase();
+  let reply = "Posso aiutarti con prodotti, taglie, carrello, ordini e spedizioni.";
+  if(msg.includes("hoodie") || msg.includes("felpa")) reply = "Perfetto. Vai nella HOME, clicca una hoodie e si aprirà la pagina acquisto.";
+  else if(msg.includes("t-shirt") || msg.includes("maglia")) reply = "Ottima scelta. Clicca una t-shirt nella HOME per vedere prezzo, taglie e dettagli.";
+  else if(msg.includes("ordine") || msg.includes("ordinare") || msg.includes("comprare") || msg.includes("acquistare")) reply = "Ti seguo passo passo: clicca un prodotto, scegli taglia e quantità, aggiungilo al carrello e conferma l’ordine.";
+  else if(msg.includes("carrello")) reply = "Il carrello è in alto nel menu. Da lì puoi controllare i prodotti e confermare l’ordine.";
+  else if(msg.includes("spedizione")) reply = "Per informazioni su spedizioni e tempi scrivici su Instagram o email dalla sezione CONTACT.";
+  else if(msg.includes("taglia")) reply = "Nella pagina prodotto puoi scegliere S, M, L oppure XL.";
+
+  setTimeout(()=>{
+    messages.innerHTML += `<div class="ai-msg bot">${reply}</div>`;
+    messages.scrollTop = messages.scrollHeight;
+  }, 350);
+  input.value = "";
+  messages.scrollTop = messages.scrollHeight;
+}
 </script>
 
 </body>
