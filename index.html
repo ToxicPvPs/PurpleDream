@@ -8,7 +8,7 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
 html{scroll-behavior:smooth;}
-body{background:#000;color:#fff;overflow:hidden;}
+body{background:#000;color:#fff;overflow-x:hidden;overflow-y:auto;}
 
 /* INTRO */
 .intro{position:fixed;inset:0;background:#000;display:flex;justify-content:center;align-items:center;z-index:999999;animation:introFade 2.2s forwards;animation-delay:1.2s;}
@@ -27,7 +27,7 @@ input,button{margin-top:15px;padding:12px 18px;background:transparent;border:1px
 button:hover{background:#be04b5;color:#fff;box-shadow:0 0 20px #be04b5;}
 
 /* SHOP */
-.shop{display:none;min-height:100vh;overflow:auto;padding:20px;background:#000;}
+.shop{display:block;min-height:100vh;overflow:auto;padding:20px;background:#000;}
 .section{display:none;}
 .section.active{display:block;}
 
@@ -113,7 +113,7 @@ button:hover{background:#be04b5;color:#fff;box-shadow:0 0 20px #be04b5;}
 /* CHI SIAMO */
 .about-wrap{display:flex;flex-direction:column;gap:90px;}.about-row{min-height:520px;display:grid;grid-template-columns:1.1fr 1fr;align-items:center;gap:60px;opacity:0;transform:translateY(120px) scale(.92);filter:blur(12px);animation:aboutEntrance 1.4s cubic-bezier(.2,.8,.2,1) forwards;}.about-row:nth-child(1){animation-delay:.2s;}.about-row:nth-child(2){animation-delay:.4s;}.about-row:nth-child(3){animation-delay:.6s;}.about-row:nth-child(4){animation-delay:.8s;}.about-row:nth-child(5){animation-delay:1s;}.about-row:nth-child(6){animation-delay:1.2s;}.about-row:nth-child(7){animation-delay:1.4s;}.about-row:nth-child(8){animation-delay:1.6s;}.about-row.reverse{grid-template-columns:1fr 1.1fr;}.about-row.reverse .about-img{order:2;}.about-row.reverse .about-text{order:1;}@keyframes aboutEntrance{0%{opacity:0;transform:translateY(120px) scale(.92);filter:blur(12px);}60%{opacity:1;}100%{opacity:1;transform:translateY(0) scale(1);filter:blur(0);}}
 .about-img{width:100%;height:450px;overflow:hidden;border:1px solid rgba(190,4,181,.4);box-shadow:0 0 25px rgba(190,4,181,.25),0 0 80px rgba(190,4,181,.08);}.about-img img{width:100%;height:100%;object-fit:cover;transform:scale(1.12);transition:transform 1.4s ease,filter 1.2s ease;}.about-row:hover .about-img img{transform:scale(1.06);filter:brightness(1.08);}.about-text h3{font-size:52px;line-height:1.1;font-weight:900;letter-spacing:3px;text-transform:uppercase;color:#fff;margin-bottom:35px;}.about-text h3 span{color:#be04b5;text-shadow:0 0 10px #be04b5,0 0 25px #be04b5,0 0 50px #be04b5;}.about-text p{max-width:600px;padding-top:25px;border-top:3px solid #be04b5;color:#cfcfcf;font-size:17px;line-height:1.7;}
-.partner-title{width:100%;display:flex;justify-content:center;margin-top:100px;margin-bottom:40px;}.partner-title h2{font-size:45px;font-weight:900;letter-spacing:4px;text-transform:uppercase;color:#fff;text-shadow:-2px -2px 0 #be04b5,2px -2px 0 #be04b5,-2px 2px 0 #be04b5,2px 2px 0 #be04b5,0 0 10px #be04b5,0 0 20px #be04b5,0 0 40px #be04b5;}.creators-end{margin-top:40px;display:flex;justify-content:center;gap:50px;flex-wrap:wrap;}.creator-end{text-align:center;width:140px;}.creator-end img{width:90px;height:90px;border-radius:50%;object-fit:cover;border:2px solid #be04b5;box-shadow:0 0 15px #be04b5,0 0 35px rgba(190,4,181,.35);transition:.35s ease;}.creator-end:hover img{transform:scale(1.08);box-shadow:0 0 25px #be04b5,0 0 60px #be04b5;}.creator-end h4{margin-top:12px;font-size:15px;color:#fff;}.creator-end p{margin-top:5px;font-size:11px;letter-spacing:1px;color:#be04b5;text-transform:uppercase;}
+.partner-title{width:100%;display:flex;justify-content:center;margin-top:100px;margin-bottom:40px;}.partner-title h2{font-size:45px;font-weight:900;letter-spacing:4px;text-transform:uppercase;color:#fff;text-shadow:-2px -2px 0 #be04b5,2px -2px 0 #be04b5,-2px 2px 0 #be04b5,2px 2px 0 #be04b5,0 0 10px #be04b5,0 0 20px #be04b5,0 0 40px #be04b5;}.creators-end{margin-top:40px;display:flex;justify-content:center;gap:50px;flex-wrap:wrap;}.creator-end{text-align:center;width:140px;}.creator-end img{width:90px;height:90px;border-radius:50%;object-fit:cover;border:2px solid #be04b5;box-shadow:0 0 15px #be04b5,0 0 35px rgba(190,4,181,.35);transition:.35s ease;}.creator-end:hover img{transform:scale(1.08);box-shadow:0 0 25px #be04b5,0 0 60px #be04b5;}.creator-end h4{margin-top:12px;font-size:15px;color:#fff;display:inline-flex;align-items:center;justify-content:center;gap:5px;}.creator-end h4 .verified-badge{width:16px;height:16px;flex-shrink:0;filter:drop-shadow(0 0 4px rgba(190,4,181,.6));}.creator-end p{margin-top:5px;font-size:11px;letter-spacing:1px;color:#be04b5;text-transform:uppercase;}
 
 /* FOOTER */
 .footer{margin-top:90px;border-top:2px solid #be04b5;background:#050505;color:#aaa;}.footer-top{padding:55px 8%;display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:60px;}.footer-col h4{color:#fff;font-size:12px;letter-spacing:5px;text-transform:uppercase;margin-bottom:22px;position:relative;}.footer-col h4::after{content:"";width:35px;height:2px;background:#be04b5;position:absolute;left:0;bottom:-10px;box-shadow:0 0 12px #be04b5;}.footer-col p,.footer-col a{display:block;color:#999;text-decoration:none;font-size:14px;margin-bottom:16px;transition:.3s;cursor:pointer;}.footer-col a:hover{color:#be04b5;transform:translateX(5px);}.newsletter{display:flex;margin-top:10px;}.newsletter input{margin:0;width:170px;background:#111;color:#fff;border:1px solid rgba(190,4,181,.5);border-radius:8px 0 0 8px;}.newsletter button{margin:0;width:48px;border-radius:0 8px 8px 0;background:#be04b5;color:#fff;}.socials{display:flex;gap:12px;margin-top:18px;}.socials a{width:36px;height:36px;border-radius:50%;border:1px solid rgba(190,4,181,.5);display:flex;justify-content:center;align-items:center;color:#fff;box-shadow:0 0 12px rgba(190,4,181,.3);}.footer-bottom{border-top:1px solid rgba(190,4,181,.25);padding:28px 20px;text-align:center;font-size:13px;color:#888;}.footer-bottom span{color:#be04b5;}
@@ -142,15 +142,6 @@ button:disabled{opacity:.55;cursor:not-allowed;box-shadow:none!important;}
 <body>
 
 <div class="intro"><img src="logodome.png"></div>
-
-<div class="lock" id="lock">
-  <video autoplay loop muted playsinline><source src="videohome.mp4"></video>
-  <div class="overlay"></div>
-  <div class="logo"><img src="logodome.png" onclick="goHome()"></div>
-  <h1 class="title">Drop Locked</h1>
-  <input id="pass" type="password" placeholder="PASSWORD" onkeydown="if(event.key==='Enter'){unlock()}">
-  <button onclick="unlock()">ENTER</button>
-</div>
 
 <div class="shop" id="shop">
 
@@ -203,16 +194,16 @@ button:disabled{opacity:.55;cursor:not-allowed;box-shadow:none!important;}
   <div class="section" id="chi_siamo">
     <div class="about-wrap">
       <div class="about-row"><div class="about-img"><img src="ktm1.JPG"></div><div class="about-text"><h3>THE BEST CHOICE<br>FOR YOUR <span>STYLE</span></h3><p>Brand streetwear costruito su drop limitati, design esclusivi e identità unica.</p></div></div>
-      <div class="about-row reverse"><div class="about-img"><img src="c100rosa.png"></div><div class="about-text"><h3>BUILT FOR<br><span>COMMUNITY</span></h3><p>Una community nata dalla passione per streetwear, moto e cultura underground.</p></div></div>
+      <div class="about-row reverse"><div class="about-img"><img src="killthelimits.jpg"></div><div class="about-text"><h3>BUILT FOR<br><span>COMMUNITY</span></h3><p>Una community nata dalla passione per streetwear, moto e cultura underground.</p></div></div>
       <div class="about-row"><div class="about-img"><img src="k2.JPG"></div><div class="about-text"><h3>THE BEST CHOICE<br>FOR YOUR <span>BIKE</span></h3><p>Grafiche personalizzate e design aggressivi creati per distinguerti ovunque.</p></div></div>
-      <div class="about-row reverse"><div class="about-img"><img src="rosa2.png"></div><div class="about-text"><h3>PURE<br><span>ADRENALINE</span></h3><p>Ogni progetto nasce per trasmettere energia, stile e performance visiva.</p></div></div>
+      <div class="about-row reverse"><div class="about-img"><img src="purpledreamssss.jpg"></div><div class="about-text"><h3>PURE<br><span>ADRENALINE</span></h3><p>Ogni progetto nasce per trasmettere energia, stile e performance visiva.</p></div></div>
       <div class="about-row"><div class="about-img"><img src="k1.JPG"></div><div class="about-text"><h3>LIMITED<br><span>DESIGN</span></h3><p>Edizioni esclusive curate nei minimi dettagli per un look unico e premium.</p></div></div>
-      <div class="about-row reverse"><div class="about-img"><img src="c100rossa.png"></div><div class="about-text"><h3>MADE FOR<br><span>RIDERS</span></h3><p>Creato per chi vive la moto come stile di vita e identità personale.</p></div></div>
+      <div class="about-row reverse"><div class="about-img"><img src="sxback.jpg"></div><div class="about-text"><h3>MADE FOR<br><span>RIDERS</span></h3><p>Creato per chi vive la moto come stile di vita e identità personale.</p></div></div>
       <div class="about-row"><div class="about-img"><img src="k4.JPG"></div><div class="about-text"><h3>Purple Dream<br><span>VISION</span></h3><p>Non seguiamo trend: costruiamo un’identità visiva riconoscibile e fuori dagli schemi.</p></div></div>
-      <div class="about-row reverse"><div class="about-img"><img src="rossa2.png"></div><div class="about-text"><h3>LIMITED DROP<br><span>ONLY</span></h3><p>Ogni collezione è limitata. Nessun restock. Solo pezzi esclusivi.</p></div></div>
+      <div class="about-row reverse"><div class="about-img"><img src="sxfront.jpg"></div><div class="about-text"><h3>LIMITED DROP<br><span>ONLY</span></h3><p>Ogni collezione è limitata. Nessun restock. Solo pezzi esclusivi.</p></div></div>
     </div>
     <div class="partner-title"><h2>PARTNER</h2></div>
-    <div class="creators-end"><div class="creator-end"><a href="https://www.instagram.com/_domesx/" target="_blank"><img src="Domesx.jpg"></a><h4>Dome.sx ✓</h4><p>FOUNDER / OWNER</p></div><div class="creator-end"><a href="https://www.instagram.com/__aanna.a/" target="_blank"><img src="anna.jpg"></a><h4>Aanna.a</h4><p>SOCIAL MEDIA MANAGER</p></div><div class="creator-end"><a href="https://instagram.com/mi_race_graphic" target="_blank"><img src="mirace.jpg"></a><h4>Mi_race_graphic</h4><p>GRAFICHE MOTO</p></div><div class="creator-end"><a href="https://www.instagram.com/sondera_project/" target="_blank"><img src="sondera.jpg"></a><h4>Sondera Project</h4><p>LABORATORIO DI INGEGNERIA</p></div><div class="creator-end"><a href="https://www.instagram.com/3dprojectt_/" target="_blank"><img src="3dproj.jpg"></a><h4>3dproject</h4><p>Accessori per moto</p></div></div>
+    <div class="creators-end"><div class="creator-end"><a href="https://www.instagram.com/_domesx/" target="_blank"><img src="Domesx.jpg"></a><h4>Dome.sx <svg class="verified-badge" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Verificato"><circle cx="12" cy="12" r="11" fill="#be04b5"/><path d="M7.5 12.5l3 3 6-6.5" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></h4><p>FOUNDER / OWNER</p></div><div class="creator-end"><a href="https://www.instagram.com/__aanna.a/" target="_blank"><img src="anna.jpg"></a><h4>Aanna.a</h4><p>SOCIAL MEDIA MANAGER</p></div><div class="creator-end"><a href="https://instagram.com/mi_race_graphic" target="_blank"><img src="mirace.jpg"></a><h4>Mi_race_graphic</h4><p>GRAFICHE MOTO</p></div><div class="creator-end"><a href="https://www.instagram.com/sondera_project/" target="_blank"><img src="sondera.jpg"></a><h4>Sondera Project</h4><p>LABORATORIO DI INGEGNERIA</p></div><div class="creator-end"><a href="https://www.instagram.com/3dprojectt_/" target="_blank"><img src="3dproj.jpg"></a><h4>3dproject</h4><p>Accessori per moto</p></div></div>
     <footer class="footer"><div class="footer-top"><div class="footer-col"><h4>Purple Dream</h4><p>Streetwear, moto e design limitato.</p></div><div class="footer-col"><h4>MENÙ</h4><a onclick="showSection('home')">Shop</a><a onclick="showSection('contact')">Supporto</a><a onclick="showSection('chi_siamo')">Chi Siamo</a></div><div class="footer-col"><h4>INFORMATIVE</h4><a>Contatti</a><a>Spedizioni</a><a>Rimborsi</a><a>Privacy</a></div><div class="footer-col"><h4>NEWSLETTER</h4><div class="newsletter"><input type="email" placeholder="Indirizzo email"><button>→</button></div><div class="socials"><a href="https://www.instagram.com/_domesx/" target="_blank">◎</a><a href="#">♪</a></div></div></div><div class="footer-bottom">© 2026, <span>Purple Dream</span> Powered by Domesx ✓</div></footer>
   </div>
 </div>
@@ -260,13 +251,20 @@ function showCards(){
   });
 }
 
+// Mostra le card all'avvio (lock rimosso)
+document.addEventListener("DOMContentLoaded", function(){
+  setTimeout(showCards, 50);
+});
+
 function unlock(){
-  const pass = document.getElementById("pass").value.trim();
+  const passEl = document.getElementById("pass");
+  const pass = passEl ? passEl.value.trim() : "";
   if(pass !== "902"){
     alert("Password sbagliata.");
     return;
   }
-  document.getElementById("lock").style.display = "none";
+  const lockEl = document.getElementById("lock");
+  if(lockEl) lockEl.style.display = "none";
   document.getElementById("shop").style.display = "block";
   document.body.style.overflow = "auto";
   showSection("home");
@@ -288,10 +286,9 @@ function showSection(id){
 }
 
 function goHome(){
-  document.getElementById("shop").style.display = "none";
-  document.getElementById("lock").style.display = "flex";
-  document.getElementById("pass").value = "";
-  document.body.style.overflow = "hidden";
+  // Lock rimosso: resta sulla home
+  showSection("home");
+  window.scrollTo({top:0, behavior:"smooth"});
 }
 
 function openProduct(id){
